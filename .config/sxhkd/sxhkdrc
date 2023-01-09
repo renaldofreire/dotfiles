@@ -1,0 +1,16 @@
+# Firefox 
+ctrl + super + w
+    firefox
+
+# Dmenu
+ctrl + super + m
+    dmenu_extended_run
+    # dmenu_run
+
+# Thunar
+ctrl + super + f
+    thunar
+
+# Flameshot
+Print
+    flameshot gui
