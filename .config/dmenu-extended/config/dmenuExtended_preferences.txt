@@ -32,7 +32,12 @@
             "Redshift OFF",
             "sh /mnt/SSDFiles/Scripts/redshift-off.sh;"
         ],
-        "webstorm"
+        "webstorm",
+        "gimp",
+        [
+            "Lock Screen",
+            "light-locker-command -l;"
+        ]
     ],
     "indicator_alias": "",
     "indicator_edit": "*",

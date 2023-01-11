@@ -104,6 +104,7 @@ return packer.startup(function(use)
 
   -- USER PLUGINS
   use { "pangloss/vim-javascript" }
+  use { "mattn/emmet-vim" }
 
 
   -- Automatically set up your configuration after cloning packer.nvim

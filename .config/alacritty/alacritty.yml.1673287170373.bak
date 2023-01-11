@@ -107,7 +107,7 @@ font:
     # family: hack
     # family: FiraCode Nerd Font Mono
     family: JetBrainsMono Nerd Font Mono
-    # family: Hack Nerd Font Mono
+    # family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Regular
 
@@ -120,7 +120,7 @@ font:
     # family: hack
     # family: FiraCode Nerd Font Mono
     family: JetBrainsMono Nerd Font Mono
-    # family: Hack Nerd Font Mono
+    # family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -133,7 +133,7 @@ font:
     # family: hack
     # family: FiraCode Nerd Font Mono
     family: JetBrainsMono Nerd Font Mono
-    # family: Hack Nerd Font Mono
+    # family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Italic
 
@@ -146,7 +146,7 @@ font:
     # family: monospace
     # family: FiraCode Nerd Font Mono
     family: JetBrainsMono Nerd Font Mono
-    # family: Hack Nerd Font Mono
+    # family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
@@ -180,29 +180,40 @@ font:
 #draw_bold_text_with_bright_colors: false
 # Colors (ArcoLinux)
 colors:
+  # Default colors
   primary:
-    background: '#2e3436'
-    foreground: '#eeeeec'
+    background: '#161616'
+    foreground: '#e4e4e4'
+
+  # Cursor volors
+  cursor:
+    text: '#feffff'
+    cursor: '#ffb472'
 
   # Normal colors
   normal:
-    black: '#2e3436'
-    red: '#cc0000'
-    green: '#73d216'
-    yellow: '#edd400'
-    blue: '#3465a4'
-    magenta: '#75507b'
-    cyan: '#f57900'
-    white: '#d3d7cf'
+    black: '#a3a3a3'
+    red: '#e98885'
+    green: '#a3c38b'
+    yellow: '#ffc68d'
+    blue: '#a6cae2'
+    magenta: '#e7cdfb'
+    cyan: '#00a69f'
+    white: '#e4e4e4'
 
   # Bright colors
   bright:
-    black: '#2e3436'
-    red: '#ef2929'
-    green: '#8ae234'
-    yellow: '#fce94f'
-    blue: '#729fcf'
-    magenta: '#ad7fa8'
-    cyan: '#fcaf3e'
-    white: '#eeeeec'
-theme: Tangoish
+    black: '#c8c8c8'
+    red: '#ffb2b0'
+    green: '#c8e2b9'
+    yellow: '#ffe1af'
+    blue: '#bddff7'
+    magenta: '#fce2ff'
+    cyan: '#0bbdb6'
+    white: '#feffff'
+
+  # Selection colors
+  selection:
+    text: '#5963a2'
+    background: '#f6f6f6'
+theme: Jellybeans

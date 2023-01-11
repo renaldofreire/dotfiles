@@ -10,6 +10,7 @@ clementine &
 crow &
 firefox &
 alacritty &
-xset r rate 300 30
+xset r rate 400 30
+light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
 #setxkbmap -layout us -variant intl
 
