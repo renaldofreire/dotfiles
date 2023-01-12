@@ -182,28 +182,28 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1f1f1f'
-    foreground: '#e5e1d8'
+    background: '#F2EEDE'
+    foreground: '#000000'
 
   # Normal colors
   normal:
     black: '#000000'
-    red: '#f7786d'
-    green: '#bde97c'
-    yellow: '#efdfac'
-    blue: '#6ebaf8'
-    magenta: '#ef88ff'
-    cyan: '#90fdf8'
-    white: '#e5e1d8'
+    red: '#CC3E28'
+    green: '#216609'
+    yellow: '#B58900'
+    blue: '#1E6FCC'
+    magenta: '#5C21A5'
+    cyan: '#158C86'
+    white: '#AAAAAA'
 
   # Bright colors
   bright:
-    black: '#b4b4b4'
-    red: '#f99f92'
-    green: '#e3f7a1'
-    yellow: '#f2e9bf'
-    blue: '#b3d2ff'
-    magenta: '#e5bdff'
-    cyan: '#c2fefa'
-    white: '#ffffff'
-theme: Wombat
+    black: '#555555'
+    red: '#CC3E28'
+    green: '#216609'
+    yellow: '#B58900'
+    blue: '#1E6FCC'
+    magenta: '#5C21A5'
+    cyan: '#158C86'
+    white: '#AAAAAA'
+theme: paper-theme
