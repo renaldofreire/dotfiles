@@ -10,7 +10,7 @@ clementine &
 crow &
 firefox &
 alacritty &
-~/docker/jellyfin/ docker-compose up -d;
+qbittorrent &
 xset r rate 401 30
 light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
 #setxkbmap -layout us -variant intl

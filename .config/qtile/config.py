@@ -222,6 +222,7 @@ floating_layout = layout.Floating(
         Match(wm_class="signal-desktop"),
         Match(wm_class="telegram-desktop"),
         Match(wm_class="cryptomator"),
+        Match(wm_class="galculator"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ]
