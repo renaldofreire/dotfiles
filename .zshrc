@@ -172,3 +172,14 @@ eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 #Pip Packages
 export PATH="$HOME/.local/bin:$PATH"
+
+# rate-mirrors
+alias ua-drop-caches='sudo paccache -rk3; paru -Sc --aur --noconfirm'
+# update bests mirrors - arch linux
+alias ua-update-all='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && ua-drop-caches \
+      && paru -Syyu --noconfirm'
