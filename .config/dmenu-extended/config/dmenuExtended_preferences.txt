@@ -37,6 +37,11 @@
         [
             "Lock Screen",
             "light-locker-command -l;"
+        ],
+        "RavenReader",
+        [
+            "Shazam",
+            "mousai;"
         ]
     ],
     "indicator_alias": "",
