@@ -32,7 +32,6 @@
             "Redshift OFF",
             "sh /mnt/SSDFiles/Scripts/redshift-off.sh;"
         ],
-        "webstorm",
         "gimp",
         [
             "Lock Screen",
@@ -42,7 +41,8 @@
         [
             "Shazam",
             "mousai;"
-        ]
+        ],
+        "webstorm"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",

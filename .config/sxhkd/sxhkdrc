@@ -4,8 +4,7 @@ ctrl + super + w
 
 # Dmenu
 ctrl + super + m
-    dmenu_extended_run
-    # dmenu_run
+   dmenu_extended_run
 
 # Thunar
 ctrl + super + f
