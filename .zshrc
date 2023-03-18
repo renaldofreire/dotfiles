@@ -3,9 +3,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ### EXPORT ###
 export EDITOR='nvim'
-export VISUAL='nvim'
+export TERMINAL='alacritty'
+export BROWSER='firefox'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
+# export VISUAL='nvim'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
