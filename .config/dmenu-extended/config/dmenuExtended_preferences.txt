@@ -42,7 +42,8 @@
             "Shazam",
             "mousai;"
         ],
-        "webstorm"
+        "webstorm",
+        "PocketCasts"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
