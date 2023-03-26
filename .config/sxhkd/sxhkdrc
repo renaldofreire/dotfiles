@@ -6,9 +6,9 @@ ctrl + super + w
 ctrl + super + m
    dmenu_extended_run
 
-# Thunar
+# Ranger
 ctrl + super + f
-    thunar
+    alacritty -e ranger
 
 # Flameshot
 Print
