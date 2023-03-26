@@ -2,12 +2,12 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ### EXPORT ###
-export EDITOR='nvim'
+export EDITOR='lvim'
 export TERMINAL='alacritty'
 export BROWSER='firefox'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
-# export VISUAL='nvim'
+export VISUAL='lvim'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -117,6 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 # PERSONAL ALIAS
 alias v='nvim'
+alias lv='lvim'
 alias n='node'
 alias lc='colorls'
 alias lis='live-server'
@@ -126,7 +127,7 @@ alias cdvim='cd /home/renaldo/.config/nvim/'
 alias cdqtile='cd /home/renaldo/.config/qtile/'
 alias cdssd='cd /mnt/SSDFiles/'
 alias cddown='cd ~/Downloads/'
-alias cdproj='cd /mnt/SSDFiles/projects/'
+alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
 alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
 alias notes='v /mnt/SSDFiles/Dropbox/Apps/Notes/notebook.md'
