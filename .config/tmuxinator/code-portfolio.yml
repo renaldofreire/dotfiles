@@ -1,5 +1,5 @@
 name: code-portfolio
-root: /mnt/SSD FILES/projects/dev-portfolio/
+root: ~/projects/portfolio-v2/
 
 # Optional tmux socket
 # socket_name: foo
@@ -43,7 +43,7 @@ root: /mnt/SSD FILES/projects/dev-portfolio/
 # attach: false
 
 windows:
-  - c: v notes.md
+  - c: clear; lc;
   - t: 
     layout: main-vertical
     panes: tmux neww
