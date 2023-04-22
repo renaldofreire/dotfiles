@@ -116,7 +116,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PERSONAL ALIAS
-alias v='nvim'
+alias vim='nvim'
+alias v='lvim'
 alias lv='lvim'
 alias n='node'
 alias lc='colorls'
