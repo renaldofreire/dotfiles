@@ -17,11 +17,14 @@
     "include_items": [
         "lxappearance",
         "shutdown now",
-        "alsamixer;",
         "StandardNotes",
         [
             "Calculator",
             "galculator;"
+        ],
+        [
+            "Alsamixer",
+            "alsamixer;"
         ],
         "systemctl suspend",
         [
@@ -43,7 +46,16 @@
             "mousai;"
         ],
         "webstorm",
-        "PocketCasts"
+        "PocketCasts",
+        [
+            "Firewall",
+            "gufw;"
+        ],
+        [
+            "Razer Mouse control",
+            "polychromatic-controller"
+        ]
+
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
