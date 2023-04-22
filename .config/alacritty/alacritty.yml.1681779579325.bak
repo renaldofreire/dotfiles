@@ -182,28 +182,32 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1a1a1a'
-    foreground: '#c4c5b5'
+    background: '0x24292e'
+    foreground: '0xd1d5da'
 
   # Normal colors
   normal:
-    black: '#1a1a1a'
-    red: '#f4005f'
-    green: '#98e024'
-    yellow: '#fa8419'
-    blue: '#9d65ff'
-    magenta: '#f4005f'
-    cyan: '#58d1eb'
-    white: '#c4c5b5'
+    black: '0x24292e'
+    red: '0xf14c4c'
+    green: '0x23d18b'
+    yellow: '0xe2e210'
+    blue: '0x3b8eea'
+    magenta: '0xbc3fbc'
+    cyan: '0x29b7da'
+    white: '0xd1d5da'
 
   # Bright colors
   bright:
-    black: '#625e4c'
-    red: '#f4005f'
-    green: '#98e024'
-    yellow: '#e0d561'
-    blue: '#9d65ff'
-    magenta: '#f4005f'
-    cyan: '#58d1eb'
-    white: '#f6f6ef'
-theme: Monokai-Soda
+    black: '0x666666'
+    red: '0xf14c4c'
+    green: '0x23d18b'
+    yellow: '0xf5f543'
+    blue: '0x3b8eea'
+    magenta: '0xd670d6'
+    cyan: '0x29b7da'
+    white: '0xd1d5da'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xf14c4c' }
+theme: github_dark
