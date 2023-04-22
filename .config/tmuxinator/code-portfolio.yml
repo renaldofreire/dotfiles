@@ -1,4 +1,4 @@
-name: code-portfolio
+name: portfolio-v2
 root: ~/projects/portfolio-v2/
 
 # Optional tmux socket
@@ -43,8 +43,26 @@ root: ~/projects/portfolio-v2/
 # attach: false
 
 windows:
-  - c: clear; lc;
-  - t: 
-    layout: main-vertical
-    panes: tmux neww
-  - s: lis
+  - code:
+      # layout: main-vertical
+      layout: tiled
+      panes:
+        # - brave http://127.0.0.1:8080/ &; nvim
+        - cd ~/projects/portfolio-v2; chromium &; lvim
+  - server:
+      # layout: tiled
+      layout: main-horizontal
+      panes:
+        - cd ~/projects/portfolio-v2; clear
+        - cd ~/projects/portfolio-v2; clear
+        - cd ~/projects/portfolio-v2; clear
+  - tasks:
+      # layout: main-vertical
+      # layout: tiled
+      panes:
+        - pane_01:
+          - clear
+          - pydoro -e
+        - pane_02:
+          - clear
+          - tk list
