@@ -162,10 +162,10 @@ screens = [
                 widget.CPUGraph(type="box"),
                 widget.Sep(linewidth=1, padding=5),
                 widget.Memory(
-                    format=" {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}", measure_mem="G"
+                    format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}", measure_mem="G"
                 ),
                 widget.Sep(linewidth=1, padding=5),
-                widget.Clock(format=" %a, %d/%m - %Hh%M"),
+                widget.Clock(format=" %a, %d/%m - %Hh%M"),
                 widget.Sep(linewidth=1, padding=5),
                 widget.PulseVolume(
                     device="default",
