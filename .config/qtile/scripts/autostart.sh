@@ -8,7 +8,8 @@ nm-applet &
 sxhkd &
 clementine &
 crow &
-firefox &
+mullvad-vpn &
+#firefox &
 alacritty &
 #qbittorrent &
 xset r rate 401 30
