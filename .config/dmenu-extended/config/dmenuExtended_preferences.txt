@@ -20,7 +20,7 @@
         "StandardNotes",
         [
             "Calculator",
-            "galculator;"
+            "galculator"
         ],
         [
             "Alsamixer",
