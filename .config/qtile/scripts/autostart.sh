@@ -10,7 +10,7 @@ clementine &
 crow &
 firefox &
 alacritty &
-qbittorrent &
+#qbittorrent &
 xset r rate 401 30
 light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
 #setxkbmap -layout us -variant intl
