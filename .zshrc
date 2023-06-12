@@ -131,7 +131,8 @@ alias cddown='cd ~/Downloads/'
 alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
 alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
-alias notes='v /mnt/SSDFiles/Dropbox/Apps/Notes/notebook.md'
+alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
+
 alias mux='tmuxinator'
 
 # Git
