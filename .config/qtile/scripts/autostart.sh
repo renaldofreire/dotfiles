@@ -8,6 +8,7 @@ nm-applet &
 sxhkd &
 clementine &
 crow &
+cryptomator
 mullvad-vpn &
 #firefox &
 alacritty &
