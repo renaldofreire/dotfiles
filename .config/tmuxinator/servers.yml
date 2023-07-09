@@ -49,22 +49,26 @@ windows:
       panes:
         - pane_01:
           - clear; neofetch
-  - docker:
+  # - truenas:
+  #     # layout: tiled
+  #     layout: main-vertical
+  #     panes:
+  #       - pane_01:
+  #         - ssh root@192.168.1.131
+  - arch-docker:
       # layout: tiled
       layout: main-vertical
       panes:
         - pane_01:
-          - ssh admin@192.168.1.205
-        - pane_02:
-          - ssh admin@192.168.1.205
+          - ssh admin@192.168.1.130
   - proxmox:
       layout: main-vertical
       # layout: tiled
       panes:
         - pane_01:
-          - ssh root@192.168.1.124
+          - ssh root@192.168.1.155
         - pane_02:
-          - ssh root@192.168.1.124
+          - ssh root@192.168.1.155
   - pihole:
       layout: main-vertical
       # layout: tiled

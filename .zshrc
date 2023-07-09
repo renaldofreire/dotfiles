@@ -8,6 +8,7 @@ export BROWSER='firefox'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 export VISUAL='lvim'
+export MANPAGER=less
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -131,6 +132,7 @@ alias cddown='cd ~/Downloads/'
 alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
 alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
+alias cddoc='cd /home/renaldo/Documents/'
 alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 
 alias mux='tmuxinator'
