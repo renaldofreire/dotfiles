@@ -93,19 +93,6 @@ scrolling:
   history: 50000
   # Scrolling distance multiplier.
   #multiplier: 3
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number
-  # of lines the terminal should scroll when the alternate
-  # screen buffer is active. This is used to allow mouse
-  # scrolling for applications like `man`.
-  #
-  # To disable this completely, set `faux_multiplier` to 0.
-  faux_multiplier: 3
-
-  # Automatically scroll to the bottom when new text is written
-  # to the terminal.
-  auto_scroll: false
 
   # Faux Scrolling
   #
@@ -207,36 +194,30 @@ font:
 #draw_bold_text_with_bright_colors: false
 # Colors (ArcoLinux)
 colors:
-  name: TokyoNight Night
-  author: Folke
   # Default colors
   primary:
-    background: '0x1a1b26'
-    foreground: '0xc0caf5'
+    background: '#1a1a1a'
+    foreground: '#c4c5b5'
 
   # Normal colors
   normal:
-    black: '0x15161E'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xa9b1d6'
+    black: '#1a1a1a'
+    red: '#f4005f'
+    green: '#98e024'
+    yellow: '#fa8419'
+    blue: '#9d65ff'
+    magenta: '#f4005f'
+    cyan: '#58d1eb'
+    white: '#c4c5b5'
 
   # Bright colors
   bright:
-    black: '0x414868'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xc0caf5'
-
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
-theme: Tokyonight_Night
+    black: '#625e4c'
+    red: '#f4005f'
+    green: '#98e024'
+    yellow: '#e0d561'
+    blue: '#9d65ff'
+    magenta: '#f4005f'
+    cyan: '#58d1eb'
+    white: '#f6f6ef'
+theme: Monokai-Soda

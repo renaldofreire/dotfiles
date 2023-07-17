@@ -6,10 +6,10 @@ dropbox &
 caffeine &
 nm-applet &
 sxhkd &
-clementine &
+strawberry &
 crow &
-mullvad-vpn &
-#firefox &
+# mullvad-vpn &
+firefox &
 alacritty &
 #qbittorrent &
 xset r rate 401 30

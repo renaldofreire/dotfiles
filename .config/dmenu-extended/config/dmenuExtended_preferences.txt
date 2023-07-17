@@ -29,11 +29,11 @@
         "systemctl suspend",
         [
             "Redshift ON",
-            "sh /mnt/SSDFiles/Scripts/redshift-on.sh;"
+            "sh ~/.config/my-scripts/redshift-on.sh;"
         ],
         [
             "Redshift OFF",
-            "sh /mnt/SSDFiles/Scripts/redshift-off.sh;"
+            "sh ~/.config/my-scripts/redshift-off.sh;"
         ],
         "gimp",
         [
