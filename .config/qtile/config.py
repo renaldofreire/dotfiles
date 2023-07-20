@@ -76,21 +76,46 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl -- set-sink-volume 0 -3%")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl -- set-sink-volume 0 +3%")),
+
+    # Dmenu_extended
+    Key([mod], "m", lazy.spawn("dmenu_extended_run")),
+
     # Full Screen
     Key([mod], "f", lazy.window.toggle_fullscreen()),
+
+    # exit floating
+    Key(
+        [mod], "Escape",
+        lazy.window.toggle_floating()
+    ), ]
+
+# groups = [Group(i) for i in "1234567890"] -> default
+groups = [ 
+    Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]), 
+    Group("2"), 
+    Group("3"), 
+    Group("4", matches=[Match(wm_class=["Joplin"])]), 
+    Group("5"), 
+    Group("6"), 
+    Group("7", matches=[Match(wm_class=["pocket-casts-linux"])]), 
+    Group("8"), 
+    Group("9", matches=[Match(wm_class=["Signal", "Session"])]), 
+    Group("0"), 
+    Group("0", matches=[Match(wm_class=["Mail", "thunderbird", "FFPWA-01H120W33DG9NH8XKKZPH48ZRD"])]), 
 ]
 
-groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     keys.extend(
@@ -210,7 +235,7 @@ dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
-cursor_warp = False
+cursor_warp = True #test AQUI
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
@@ -220,7 +245,10 @@ floating_layout = layout.Floating(
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(wm_class="signal-desktop"),
+        Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
+        Match(wm_class="pocket-casts-linux"),
+        # Match(wm_class="youtube music"),
         Match(wm_class="cryptomator"),
         Match(wm_class="galculator"),
         Match(title="branchdialog"),  # gitk
@@ -247,3 +275,4 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
