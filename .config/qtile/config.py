@@ -102,6 +102,7 @@ keys = [
     ), ]
 
 # groups = [Group(i) for i in "1234567890"] -> default
+
 groups = [ 
     Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]), 
     Group("2"), 
@@ -169,10 +170,11 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.TextBox(" ", foreground="#3883c4"),
                 widget.GroupBox(hide_unused=True),
-                widget.Sep(linewidth=1, padding=5),
+                widget.Sep(linewidth=1, padding=3),
                 widget.CurrentLayout(),
-                widget.Sep(linewidth=1, padding=5),
+                widget.Sep(linewidth=1, padding=3),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -183,7 +185,7 @@ screens = [
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.TextBox("", foreground="#3883c4"),
+                # widget.TextBox("", foreground="#3883c4"),
                 widget.CPUGraph(type="box"),
                 widget.Sep(linewidth=1, padding=5),
                 widget.Memory(
@@ -235,7 +237,7 @@ dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
-cursor_warp = True #test AQUI
+cursor_warp = False
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
