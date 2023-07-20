@@ -45,40 +45,33 @@ root: ~/
 windows:
   - arch:
       # layout: main-vertical
-      layout: tiled
+      layout: even-horizontal
+      # layout: tiled
       panes:
         - pane_01:
           - clear; neofetch
-  # - truenas:
-  #     # layout: tiled
-  #     layout: main-vertical
-  #     panes:
-  #       - pane_01:
-  #         - ssh root@192.168.1.131
-  - arch-docker:
+        - pane_02:
+          - clear;
+
+  -  arch-docker & proxmox:
       # layout: tiled
-      layout: main-vertical
+      layout: even-horizontal
+      # layout: main-vertical
       panes:
         - pane_01:
           - ssh admin@192.168.1.130
-  - proxmox:
-      layout: main-vertical
-      # layout: tiled
-      panes:
-        - pane_01:
-          - ssh root@192.168.1.155
         - pane_02:
           - ssh root@192.168.1.155
-  - pihole:
-      layout: main-vertical
+
+  - truenas, pizero & openwrt:
+      # layout: main-vertical
+      layout: even-horizontal
       # layout: tiled
       panes:
         - pane_01:
+          - ssh -p 2022 root@192.168.1.131
+        - pane_02:
           - ssh renaldo@192.168.1.112
-  - openwrt:
-      # layout: main-horizontal
-      # layout: main-vertical
-      layout: tiled
-      panes:
-        - pane_01:
+        - pane_03:
           - ssh root@192.168.1.1
+
