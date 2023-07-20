@@ -2,9 +2,9 @@
 ctrl + super + w
     firefox
 
-# Dmenu
-ctrl + super + m
-   dmenu_extended_run
+# Dmenu - migrado para qtile config
+# ctrl + super + m
+   # dmenu_extended_run
 
 # Ranger
 ctrl + super + f
