@@ -102,7 +102,6 @@ keys = [
     ), ]
 
 # groups = [Group(i) for i in "1234567890"] -> default
-
 groups = [ 
     Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]), 
     Group("2"), 
@@ -231,7 +230,6 @@ mouse = [
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
     subprocess.Popen([home])
-
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
