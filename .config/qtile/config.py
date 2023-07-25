@@ -158,8 +158,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="NotoSans Nerd Font",
-    # font="TerminessTTF Nerd Font",
+    # font="NotoSans NerdFont",
+    font="Ubuntu NerdFont",
     fontsize=13,
     padding=4,
 )
