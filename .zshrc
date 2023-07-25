@@ -191,3 +191,11 @@ alias ua-update-all='export TMPFILE="$(mktemp)"; \
       && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
       && ua-drop-caches \
       && paru -Syyu --noconfirm'
+
+# PATHS
+# export PATH="your-dir:$PATH"
+export PATH="/bin:$PATH"
+export PATH="/sbin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
+
