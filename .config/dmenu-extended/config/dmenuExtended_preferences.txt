@@ -40,7 +40,6 @@
             "Lock Screen",
             "light-locker-command -l;"
         ],
-        "RavenReader",
         [
             "Shazam",
             "mousai;"
@@ -88,7 +87,7 @@
     "prompt": "Open:",
     "scan_hidden_folders": false,
     "terminal": "alacritty",
-    "terminal_editor": "nvim",
+    "terminal_editor": "lvim",
     "valid_extensions": [
         "py",
         "svg",
@@ -122,8 +121,7 @@
         "sublime-project"
     ],
     "watch_folders": [
-        "~/",
-        "/mnt/SSDFiles"
+        "~/"
     ],
     "webbrowser": "xdg-open"
 }
