@@ -109,7 +109,7 @@ groups = [
     Group(
         "0",
         matches=[
-            Match(wm_class=["Mail", "thunderbird", "FFPWA-01H120W33DG9NH8XKKZPH48ZRD"])
+            Match(wm_class=["Mail", "thunderbird", "FFPWA-01H68E6K835D2ER5J8CXKAYG8X"])
         ],
     ),
 ]
