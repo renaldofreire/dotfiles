@@ -76,44 +76,42 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl -- set-sink-volume 0 -3%")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl -- set-sink-volume 0 +3%")),
-
     # Dmenu_extended
     Key([mod], "m", lazy.spawn("dmenu_extended_run")),
-
     # Full Screen
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-
     # exit floating
-    Key(
-        [mod], "Escape",
-        lazy.window.toggle_floating()
-    ), ]
+    Key([mod], "Escape", lazy.window.toggle_floating()),
+]
 
 # groups = [Group(i) for i in "1234567890"] -> default
-groups = [ 
-    Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]), 
-    Group("2"), 
-    Group("3"), 
-    Group("4", matches=[Match(wm_class=["Joplin"])]), 
-    Group("5"), 
-    Group("6"), 
-    Group("7", matches=[Match(wm_class=["pocket-casts-linux"])]), 
-    Group("8"), 
-    Group("9", matches=[Match(wm_class=["Signal", "Session"])]), 
-    Group("0"), 
-    Group("0", matches=[Match(wm_class=["Mail", "thunderbird", "FFPWA-01H120W33DG9NH8XKKZPH48ZRD"])]), 
+groups = [
+    Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]),
+    Group("2"),
+    Group("3"),
+    Group("4", matches=[Match(wm_class=["Joplin"])]),
+    Group("5"),
+    Group("6"),
+    Group("7", matches=[Match(wm_class=["pocket-casts-linux"])]),
+    Group("8"),
+    Group("9", matches=[Match(wm_class=["Signal", "element"])]),
+    Group("0"),
+    Group(
+        "0",
+        matches=[
+            Match(wm_class=["Mail", "thunderbird", "FFPWA-01H120W33DG9NH8XKKZPH48ZRD"])
+        ],
+    ),
 ]
 
 
@@ -142,13 +140,13 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
     layout.Max(),
+    layout.MonadTall(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
+    # layout.Columns(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=5),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -169,7 +167,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox(" ", foreground="#3883c4"),
+                widget.TextBox(" ", foreground="#3883c4", fontsize="14"),
                 widget.GroupBox(hide_unused=True),
                 widget.Sep(linewidth=1, padding=3),
                 widget.CurrentLayout(),
@@ -225,11 +223,13 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
+
 # Autostart some apps
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
     subprocess.Popen([home])
+
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
@@ -275,4 +275,3 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
