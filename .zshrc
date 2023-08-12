@@ -7,7 +7,7 @@ export TERMINAL='alacritty'
 export BROWSER='firefox'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
-export VISUAL='lvim'
+export VISUAL='nvim'
 export MANPAGER=less
 
 # Path to your oh-my-zsh installation.
@@ -117,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PERSONAL ALIAS
-alias vim='nvim'
+alias vim='lvim'
 alias v='lvim'
 alias lv='lvim'
 alias n='node'
@@ -198,5 +198,6 @@ export PATH="/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="~/.local/bin:$PATH"
+export PATH="~/.rbenv/:$PATH"
+# export PATH="~/.local/bin:$PATH"
 
