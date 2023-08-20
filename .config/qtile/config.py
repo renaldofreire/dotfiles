@@ -140,9 +140,9 @@ for i in groups:
     )
 
 layouts = [
-    layout.Max(),
     layout.Columns(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
     # layout.MonadTall(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
+    layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
