@@ -89,7 +89,8 @@ window:
   
 # Alacritty Themes
 import:
- - ~/.config/alacritty/themes/themes/tokyo-night.yaml
+ # - ~/.config/alacritty/themes/themes/tokyo-night.yaml
+ - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
