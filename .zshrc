@@ -116,31 +116,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# PERSONAL ALIAS
+### PERSONAL ALIAS ###
+# General
 alias vim='lvim'
 alias v='lvim'
 alias lv='lvim'
 alias n='node'
-alias lc='colorls'
-alias ls='exa --icons'
-alias lca='colorls -lA --sd'
 alias lis='live-server'
 alias tk='task'
 alias sudo='sudo '
-alias cdvim='cd /home/renaldo/.config/nvim/'
-alias cdqtile='cd /home/renaldo/.config/qtile/'
-alias cdssd='cd /mnt/SSDFiles/'
+alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
+alias mux='tmuxinator'
+alias htmlbase='mkdir css js; touch index.html css/style.css js/script.js'
+
+# Exa - Aliases
+alias lc='exa --icons --color=always'
+alias lca='exa -lag --icons --color=always'
+# alias lc='exa -la --icons --color=always' #small
+
+# Goto - Aliases
 alias cddown='cd ~/Downloads/'
+alias cdqtile='cd /home/renaldo/.config/qtile/'
+alias cdvim='cd /home/renaldo/.config/nvim/'
 alias cddoc='cd ~/Documents/'
 alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
 alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
 alias cddoc='cd /home/renaldo/Documents/'
-alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
+# alias cdssd='cd /mnt/SSDFiles/'
 
-alias mux='tmuxinator'
-
-# Git
+# Git - Aliases
 gcom() {
     git add .
     git commit -m "$1"
@@ -163,11 +168,6 @@ alias df='df -h'
 # free
 alias free="free -mt"
 
-# Base html course
-alias htmlbase='mkdir css js; touch index.html css/style.css js/script.js'
-
-# neofetch
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -183,7 +183,7 @@ eval "$(~/.rbenv/bin/rbenv init - zsh)"
 #Pip Packages
 export PATH="$HOME/.local/bin:$PATH"
 
-# rate-mirrors
+# RATE-MIRRORS
 alias ua-drop-caches='sudo paccache -rk3; paru -Sc --aur --noconfirm'
 # update bests mirrors - arch linux
 alias ua-update-all='export TMPFILE="$(mktemp)"; \
