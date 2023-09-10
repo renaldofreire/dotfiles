@@ -71,7 +71,7 @@ windows:
         - pane_01:
           - ssh -p 2022 root@192.168.1.131
         - pane_02:
-          - ssh -p 2022 admin@192.168.1.111
+          - ssh admin@192.168.1.111
         - pane_03:
           - ssh -p 2022 root@192.168.1.1
 
