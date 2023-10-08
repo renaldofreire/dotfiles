@@ -54,7 +54,8 @@
             "Razer Mouse control",
             "polychromatic-controller"
         ],
-        "mullvad-vpn"
+        "mullvad-vpn",
+        "pycharm-eap"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
