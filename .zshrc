@@ -121,6 +121,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim='lvim'
 alias v='lvim'
 alias lv='lvim'
+alias vs='vscodium'
 alias n='node'
 alias lis='live-server'
 alias tk='task'
@@ -143,6 +144,7 @@ alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
 alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
 alias cddoc='cd /home/renaldo/Documents/'
+alias cdfm='cd "/home/renaldo/Games/football-manager-2023/drive_c/users/steamuser/Documents/Sports Interactive/Football Manager 2023/"'
 # alias cdssd='cd /mnt/SSDFiles/'
 
 # Git - Aliases
@@ -201,5 +203,6 @@ export PATH="/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="~/.rbenv/:$PATH"
+export PATH="$PATH:/home/renaldo/.cargo/bin" #cargo
 # export PATH="~/.local/bin:$PATH"
 
