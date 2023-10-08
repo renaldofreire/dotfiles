@@ -114,7 +114,6 @@ groups = [
     ),
 ]
 
-
 for i in groups:
     keys.extend(
         [
@@ -191,6 +190,8 @@ screens = [
                 widget.Sep(linewidth=1, padding=5),
                 widget.Clock(format=" %a, %d/%m - %Hh%M"),
                 widget.Sep(linewidth=1, padding=5),
+                # TODO: fix emoji + vol data in same widget
+                widget.Volume(emoji=True),
                 widget.Volume(),
                 widget.Sep(linewidth=1, padding=5),
                 # widget.Volume(device="default", fmt=' {}'),
