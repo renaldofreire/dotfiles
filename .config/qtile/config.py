@@ -1,4 +1,4 @@
-# Copyright (c) 2010 Aldo Cortesi
+# COPYRIGHT (C) 2010 ALDO CORTESI
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
@@ -191,12 +191,7 @@ screens = [
                 widget.Sep(linewidth=1, padding=5),
                 widget.Clock(format=" %a, %d/%m - %Hh%M"),
                 widget.Sep(linewidth=1, padding=5),
-                widget.PulseVolume(
-                    device="default",
-                    fmt=" {}",
-                    limit_max_volume=True,
-                    update_interval=0,
-                ),
+                widget.Volume(),
                 widget.Sep(linewidth=1, padding=5),
                 # widget.Volume(device="default", fmt=' {}'),
                 widget.Systray(icon_size=15, padding=7),
