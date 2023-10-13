@@ -108,9 +108,9 @@ groups = [
     Group("0"),
     Group(
         "0",
-        matches=[
+        matches={
             Match(wm_class=["Mail", "thunderbird", "FFPWA-01H68E6K835D2ER5J8CXKAYG8X"])
-        ],
+        },
     ),
 ]
 
