@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ### EXPORT ###
-export EDITOR='lvim'
+export EDITOR='nvim'
 export TERMINAL='alacritty'
 export BROWSER='firefox'
 export HISTCONTROL=ignoreboth:erasedups
@@ -118,9 +118,9 @@ source $ZSH/oh-my-zsh.sh
 
 ### PERSONAL ALIAS ###
 # General
-alias vim='lvim'
-alias v='lvim'
-alias lv='lvim'
+alias vim='nvim'
+alias v='nvim'
+alias lv='nvim'
 alias vs='vscodium'
 alias n='node'
 alias lis='live-server'

@@ -89,10 +89,19 @@ window:
   
 # Alacritty Themes
 import:
+ # - ~/.config/alacritty/themes/themes/catppuccin-latte.yml
  # - ~/.config/alacritty/themes/themes/tokyo-night.yaml
- - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
+ - ~/.config/alacritty/themes/themes/catppuccin-mocha.yml.yaml
+ # - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
  # - ~/.config/alacritty/themes/themes/monokai_pro.yaml
  # - ~/.config/alacritty/themes/themes/everforest_light.yaml
+ 
+# shell:
+#   program: /bin/zsh
+#   args:
+#     - -l
+#     - -c
+#     - "tmux attach || tmux"
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
