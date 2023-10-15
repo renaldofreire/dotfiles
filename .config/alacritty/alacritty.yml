@@ -13,8 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
+env:
+  TERM: xterm-256color 
 #
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
@@ -89,19 +89,19 @@ window:
   
 # Alacritty Themes
 import:
- # - ~/.config/alacritty/themes/themes/catppuccin-latte.yml
+ #- ~/.config/alacritty/themes/themes/catppuccin-latte.yml
+ - ~/.config/alacritty/themes/themes/catppuccin-mocha.yml
  # - ~/.config/alacritty/themes/themes/tokyo-night.yaml
- - ~/.config/alacritty/themes/themes/catppuccin-mocha.yml.yaml
  # - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
  # - ~/.config/alacritty/themes/themes/monokai_pro.yaml
  # - ~/.config/alacritty/themes/themes/everforest_light.yaml
  
-# shell:
-#   program: /bin/zsh
-#   args:
-#     - -l
-#     - -c
-#     - "tmux attach || tmux"
+    #shell:
+    #program: /bin/zsh
+    #args:
+    #- -l
+    #- -c
+    #- "tmux attach || tmux"
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -149,7 +149,7 @@ font:
     #   - (Windows) Consolas
     # family: hack
     # family: FiraCode Nerd Font Mono
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: Hack Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -162,7 +162,7 @@ font:
     # value specified for the normal font.
     # family: hack
     # family: FiraCode Nerd Font Mono
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: Hack Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -175,7 +175,7 @@ font:
     # value specified for the normal font.
     # family: hack
     # family: FiraCode Nerd Font Mono
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: Hack Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -188,7 +188,7 @@ font:
     # value specified for the normal font.
     # family: monospace
     # family: FiraCode Nerd Font Mono
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: Hack Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold Italic

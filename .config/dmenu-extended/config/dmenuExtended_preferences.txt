@@ -44,7 +44,6 @@
             "Shazam",
             "mousai;"
         ],
-        "webstorm",
         "PocketCasts",
         [
             "Firewall",
@@ -55,7 +54,7 @@
             "polychromatic-controller"
         ],
         "mullvad-vpn",
-        "pycharm-eap"
+        "webstorm"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",

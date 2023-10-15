@@ -6,7 +6,7 @@ dropbox &
 caffeine &
 nm-applet &
 sxhkd &
-strawberry &
+# strawberry &
 crow &
 # mullvad-vpn &
 firefox &

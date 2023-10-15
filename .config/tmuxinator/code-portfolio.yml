@@ -48,14 +48,14 @@ windows:
       layout: tiled
       panes:
         # - brave http://127.0.0.1:8080/ &; nvim
-        - cd ~/projects/portfolio-v3; chromium &; lvim
+        - cd ~/projects/portfolio-v3; chromium &; nvim .
   - server:
       # layout: tiled
       layout: main-horizontal
       panes:
-        - cd ~/projects/portfolio-v2; clear
-        - cd ~/projects/portfolio-v2; clear
-        - cd ~/projects/portfolio-v2; clear
+        - cd ~/projects/portfolio-v3; clear
+        - cd ~/projects/portfolio-v3; clear
+        - cd ~/projects/portfolio-v3; clear
   - tasks:
       # layout: main-vertical
       # layout: tiled
