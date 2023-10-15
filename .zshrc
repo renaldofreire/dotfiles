@@ -140,7 +140,7 @@ alias lca='exa -lag --icons --color=always'
 # Goto - Aliases
 alias cddown='cd ~/Downloads/'
 alias cdqtile='cd /home/renaldo/.config/qtile/'
-alias cdvim='cd /home/renaldo/.config/nvim/'
+alias cdvim='cd /home/renaldo/.config/nvim/; v .;'
 alias cddoc='cd ~/Documents/'
 alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
