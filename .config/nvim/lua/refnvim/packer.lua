@@ -1,6 +1,6 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
+-- Only required if you have packer configured as `opt`packer
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
 		}
 
 		use("folke/zen-mode.nvim")
+		use("mattn/emmet-vim")
 		use("github/copilot.vim")
 		use("eandrju/cellular-automaton.nvim")
 		use("laytan/cloak.nvim")
