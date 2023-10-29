@@ -89,7 +89,7 @@ window:
   
 # Alacritty Themes
 import:
- #- ~/.config/alacritty/themes/themes/catppuccin-latte.yml
+ # - ~/.config/alacritty/themes/themes/catppuccin-latte.yml
  - ~/.config/alacritty/themes/themes/catppuccin-mocha.yml
  # - ~/.config/alacritty/themes/themes/tokyo-night.yaml
  # - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
