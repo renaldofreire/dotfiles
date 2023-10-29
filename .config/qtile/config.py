@@ -166,7 +166,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox(" ", foreground="#3883c4", fontsize="14"),
+                # widget.TextBox(" ", foreground="#3883c4", fontsize="14"),
                 widget.GroupBox(hide_unused=True),
                 widget.Sep(linewidth=1, padding=3),
                 widget.CurrentLayout(),
