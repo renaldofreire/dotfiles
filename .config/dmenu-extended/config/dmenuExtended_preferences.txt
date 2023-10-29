@@ -54,7 +54,7 @@
             "polychromatic-controller"
         ],
         "mullvad-vpn",
-        "webstorm"
+        "webstorm-eap"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
