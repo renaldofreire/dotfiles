@@ -30,3 +30,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+-- Fix clipboard
+vim.opt.clipboard:append('unnamedplus')
+
