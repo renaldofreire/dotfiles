@@ -9,7 +9,8 @@ sxhkd &
 # strawberry &
 crow &
 # mullvad-vpn &
-firefox &
+librewolf &
+# firefox &
 alacritty &
 #qbittorrent &
 xset r rate 401 30
