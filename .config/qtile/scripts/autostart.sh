@@ -15,6 +15,6 @@ alacritty &
 #qbittorrent &
 xset r rate 401 30
 light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
-sleep 10 && qtile cmd-obj -o cmd -f reload_config
+sleep 100 && qtile cmd-obj -o cmd -f reload_config
 #setxkbmap -layout us -variant intl
 
