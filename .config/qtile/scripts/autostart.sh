@@ -3,6 +3,7 @@
 picom &
 nitrogen --restore
 dropbox &
+megasync &
 caffeine &
 nm-applet &
 sxhkd &
