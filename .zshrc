@@ -125,6 +125,7 @@ alias v='nvim'
 alias lv='nvim'
 alias vs='vscodium'
 alias n='node'
+alias pru='paru'
 alias lis='live-server'
 alias tk='task'
 alias sudo='sudo '
@@ -182,7 +183,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 #RBEnv - ruby manager
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+#eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 #Pip Packages
 export PATH="$HOME/.local/bin:$PATH"
