@@ -29,11 +29,11 @@
         "systemctl suspend",
         [
             "Redshift ON",
-            "sh ~/.config/my-scripts/redshift-on.sh;"
+	    "sh ~/.config/qtile/scripts/redshifton.sh;"
         ],
         [
             "Redshift OFF",
-            "sh ~/.config/my-scripts/redshift-off.sh;"
+            "redshift -x;"
         ],
         "gimp",
         [
@@ -44,7 +44,6 @@
             "Shazam",
             "mousai;"
         ],
-        "PocketCasts",
         [
             "Firewall",
             "gufw;"

@@ -155,10 +155,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    # font="NotoSans NerdFont",
-    font="Ubuntu NerdFont",
+    font="NotoSans NerdFont",
+    #font="Ubuntu NerdFont",
     fontsize=13,
-    padding=4,
+    padding=5,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -189,16 +189,17 @@ screens = [
                 ),
                 widget.Sep(linewidth=1, padding=5),
                 widget.Clock(format=" %a, %d/%m - %Hh%M"),
-                widget.Sep(linewidth=1, padding=5),
+                widget.Sep(linewidth=1, padding=3),
                 # TODO: fix emoji + vol data in same widget
-                widget.Volume(emoji=True),
-                widget.Volume(),
-                widget.Sep(linewidth=1, padding=5),
-                # widget.Volume(device="default", fmt=' {}'),
+                widget.Volume(
+                    fmt='  {}',
+                    limit_max_volume=True,
+                    ),
+                widget.Sep(linewidth=1, padding=3),
                 widget.Systray(icon_size=15, padding=7),
                 # widget.QuickExit(),
             ],
-            24,
+            20,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
