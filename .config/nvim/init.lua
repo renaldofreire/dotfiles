@@ -200,19 +200,24 @@ require('lazy').setup({
     },
   },
 
+  -- CATPPUCCIN theme
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     lazy = false,
     config = function()
-      require('onedark').setup {
-        -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
-      }
-      require('onedark').load()
+        require('catppuccin').setup({
+            flavour = 'mocha', -- latte, frappe, macchiato, mocha
+            background = {
+                light = 'latte',
+                dark = 'mocha',
+            },
+        })
+        require('catppuccin').load()
     end,
-  },
+},
+
 
   {
     -- Set lualine as statusline
