@@ -182,8 +182,6 @@ export PNPM_HOME="/home/renaldo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-#RBEnv - ruby manager
-#eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 #Pip Packages
 export PATH="$HOME/.local/bin:$PATH"
@@ -205,7 +203,6 @@ export PATH="/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="~/.rbenv/:$PATH"
 export PATH="$PATH:/home/renaldo/.cargo/bin" #cargo
 # export PATH="~/.local/bin:$PATH"
 
