@@ -4,7 +4,11 @@
 
 # Theme
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    # uncomment the flavour you want below:
+  # "~/.config/alacritty/themes/catppuccin-latte.toml"
+  # "~/.config/alacritty/themes/catppuccin-frappe.toml"
+  # "~/.config/alacritty/themes/catppuccin-macchiato.toml"
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
 ]
 
 [colors]
