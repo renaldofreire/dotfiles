@@ -104,7 +104,7 @@ groups = [
     Group("6"),
     Group("7", matches=[Match(wm_class=["pocket-casts-linux"])]),
     Group("8"),
-    Group("9", matches=[Match(wm_class=["Signal", "element"])]),
+    Group("9", matches=[Match(wm_class=["Signal", "element", "telegram-desktop"])]),
     Group("0"),
     Group(
         "0",
