@@ -218,7 +218,6 @@ require('lazy').setup({
     end,
 },
 
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',

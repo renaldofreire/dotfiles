@@ -96,20 +96,20 @@ keys = [
 
 # groups = [Group(i) for i in "1234567890"] -> default
 groups = [
-    Group("1", matches=[Match(wm_class=["Navigator", "firefox"])]),
+    Group("1", matches=[Match(wm_class=["Navigator", "firefox", "floorp"])]),
     Group("2"),
     Group("3"),
     Group("4", matches=[Match(wm_class=["Joplin"])]),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=["pocket-casts-linux"])]),
+    Group("7", matches=[Match(wm_class=["Podcasts - Pocket Casts"])]),
     Group("8"),
     Group("9", matches=[Match(wm_class=["Signal", "element", "telegram-desktop"])]),
     Group("0"),
     Group(
         "0",
         matches={
-            Match(wm_class=["Mail", "thunderbird", "FFPWA-01HHCTHC0VZNZB0T24H87QDS4Q"])
+            Match(wm_class=["Mail", "thunderbird",])
         },
     ),
 ]
@@ -156,7 +156,7 @@ layouts = [
 
 widget_defaults = dict(
     font="NotoSans NerdFont",
-    #font="Ubuntu NerdFont",
+    # font="Ubuntu NerdFont",
     fontsize=13,
     padding=5,
 )
@@ -194,7 +194,7 @@ screens = [
                 widget.Volume(
                     fmt='  {}',
                     limit_max_volume=True,
-                    ),
+                ),
                 widget.Sep(linewidth=1, padding=3),
                 widget.Systray(icon_size=15, padding=7),
                 # widget.QuickExit(),
@@ -244,7 +244,7 @@ floating_layout = layout.Floating(
         Match(wm_class="signal-desktop"),
         Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
-        Match(wm_class="pocket-casts-linux"),
+        Match(wm_class="Podcasts - Pocket Casts"),
         # Match(wm_class="youtube music"),
         Match(wm_class="cryptomator"),
         Match(wm_class="galculator"),
