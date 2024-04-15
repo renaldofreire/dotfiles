@@ -28,7 +28,7 @@
         "systemctl suspend",
         [
             "Redshift ON",
-	    "sh ~/.config/qtile/scripts/redshifton.sh;"
+            "sh ~/.config/qtile/scripts/redshifton.sh;"
         ],
         [
             "Redshift OFF",
@@ -52,7 +52,11 @@
             "polychromatic-controller"
         ],
         "mullvad-vpn",
-        "webstorm-eap"
+        "webstorm-eap",
+        [
+            "LockScreen",
+            "dm-tool switch-to-greeter;"
+        ]
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
@@ -85,7 +89,7 @@
     "prompt": "Open:",
     "scan_hidden_folders": false,
     "terminal": "alacritty",
-    "terminal_editor": "lvim",
+    "terminal_editor": "nvim",
     "valid_extensions": [
         "py",
         "svg",
