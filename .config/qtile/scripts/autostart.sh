@@ -3,15 +3,15 @@
 picom &
 nitrogen --restore
 dropbox &
-megasync &
+#megasync &
 caffeine &
 nm-applet &
 sxhkd &
 # strawberry &
 crow &
 # mullvad-vpn &
-librewolf &
-# firefox &
+# librewolf &
+firefox &
 alacritty &
 #qbittorrent &
 xset r rate 401 30
