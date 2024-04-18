@@ -15,17 +15,27 @@
     "include_hidden_files": false,
     "include_hidden_folders": false,
     "include_items": [
-        "lxappearance",
-        "shutdown now",
-        [
-            "Calculator",
-            "galculator"
-        ],
+        
         [
             "Alsamixer",
             "alsamixer;"
         ],
-        "systemctl suspend",
+        [
+            "PC - Suspend",
+            "systemctl suspend;"
+        ],
+        [
+            "PC - Lock",
+            "dm-tool switch-to-greeter;"
+        ],
+        [
+            "PC - Shutdown",
+            "shutdown now;"
+        ],
+        [
+            "PC - Reboot",
+            "reboot;"
+        ],
         [
             "Redshift ON",
             "sh ~/.config/qtile/scripts/redshifton.sh;"
@@ -34,17 +44,12 @@
             "Redshift OFF",
             "redshift -x;"
         ],
-        "gimp",
         [
             "Lock Screen",
             "light-locker-command -l;"
         ],
         [
-            "Shazam",
-            "mousai;"
-        ],
-        [
-            "Firewall",
+            "Guided Firewall",
             "gufw;"
         ],
         [
@@ -53,10 +58,9 @@
         ],
         "mullvad-vpn",
         "webstorm-eap",
-        [
-            "LockScreen",
-            "dm-tool switch-to-greeter;"
-        ]
+        "gimp",
+        "lxappearance"
+        
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
