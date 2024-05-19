@@ -102,9 +102,9 @@ groups = [
     Group("4", matches=[Match(wm_class=["Joplin"])]),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=["Podcasts - Pocket Casts"])]),
+    Group("7", matches=[Match(wm_class=["pocket-casts"])]),
     Group("8"),
-    Group("9", matches=[Match(wm_class=["Signal", "element", "telegram-desktop"])]),
+    Group("9", matches=[Match(wm_class=["signal", "element", "telegram-desktop"])]),
     Group("0"),
     Group(
         "0",
@@ -241,11 +241,11 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(wm_class="signal-desktop"),
+        Match(wm_class="signal"),
         Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
-        Match(wm_class="Podcasts - Pocket Casts"),
-        # Match(wm_class="youtube music"),
+        Match(wm_class="pocket-casts"),
+        Match(wm_class="strawberry"),
         Match(wm_class="cryptomator"),
         Match(wm_class="galculator"),
         Match(title="branchdialog"),  # gitk
