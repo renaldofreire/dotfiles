@@ -53,25 +53,25 @@ windows:
         - pane_02:
           - clear;
 
-  -  arch-docker & proxmox:
+  -  orangepi & openwrt:
       # layout: tiled
       layout: even-horizontal
       # layout: main-vertical
       panes:
         - pane_01:
-          - ssh admin@192.168.1.130
+          - ssh root@10.1.0.100
         - pane_02:
-          - ssh root@192.168.1.155
+          - ssh root@10.1.0.1
 
-  - truenas, pizero & openwrt:
+  # - truenas, pizero & openwrt:
       # layout: main-vertical
-      layout: even-horizontal
+      # layout: even-horizontal
       # layout: tiled
-      panes:
-        - pane_01:
-          - ssh -p 2022 root@192.168.1.131
-        - pane_02:
-          - ssh admin@192.168.1.111
-        - pane_03:
-          - ssh -p 2022 root@192.168.1.1
-
+      # panes:
+      #   - pane_01:
+      #     - ssh -p 2022 root@192.168.1.131
+      #   - pane_02:
+      #     - ssh admin@192.168.1.111
+      #   - pane_03:
+      #     - ssh -p 2022 root@192.168.1.1
+      #
