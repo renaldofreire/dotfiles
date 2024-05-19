@@ -132,6 +132,7 @@ alias sudo='sudo '
 alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 alias mux='tmuxinator'
 alias htmlbase='mkdir css js; touch index.html css/style.css js/script.js'
+alias fetch='fastfetch'
 
 # Exa - Aliases
 alias lc='exa --icons --color=always'
@@ -172,6 +173,11 @@ alias df='df -h'
 
 # free
 alias free="free -mt"
+
+# yt-dlp
+alias yt-dlp-mp3-max='yt-dlp -x --audio-format mp3 --audio-quality 0'
+alias yt-dlp-video-max='yt-dlp -f 'bestvideo+bestaudio/best''
+alias yt-dlp-subs-pt-en='yt-dlp --skip-download --write-subs --write-auto-subs --sub-langs en,pt --sub-format ttml --convert-subs srt --output "transcript.%(ext)s"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
