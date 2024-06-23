@@ -58,7 +58,8 @@
         "mullvad-vpn",
         "webstorm-eap",
         "gimp",
-        "lxappearance"
+        "lxappearance",
+        "joplin-desktop"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
