@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# todo app
+please
+
 ### EXPORT ###
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -127,7 +130,7 @@ alias vs='vscodium'
 alias n='node'
 alias pru='paru'
 alias lis='live-server'
-alias tk='task'
+#alias tk='task'
 alias sudo='sudo '
 alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 alias mux='tmuxinator'
@@ -146,7 +149,8 @@ alias cdvim='cd /home/renaldo/.config/nvim/; v .;'
 alias cddoc='cd ~/Documents/'
 alias cdproj='cd ~/projects/'
 alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
-alias cdtodo='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
+alias cdnotes='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
+#alias task='cd /home/renaldo/Dropbox/Apps/TaskTxt; nvim task.md'
 alias cddoc='cd /home/renaldo/Documents/'
 alias cdfm='cd "/home/renaldo/Games/football-manager-2023/drive_c/users/steamuser/Documents/Sports Interactive/Football Manager 2023/"'
 # alias cdssd='cd /mnt/SSDFiles/'
@@ -214,3 +218,4 @@ export PATH="$PATH:/home/renaldo/.cargo/bin" #cargo
 
 # ruby: rbenv install
 eval "$(rbenv init - zsh)"
+
