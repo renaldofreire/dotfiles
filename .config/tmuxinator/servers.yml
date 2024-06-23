@@ -49,7 +49,7 @@ windows:
       # layout: tiled
       panes:
         - pane_01:
-          - clear; neofetch
+          - clear; fetch
         - pane_02:
           - clear;
 
