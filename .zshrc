@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# todo app
-please
-
 ### EXPORT ###
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -131,6 +128,7 @@ alias n='node'
 alias pru='paru'
 alias lis='live-server'
 #alias tk='task'
+alias ple='please'
 alias sudo='sudo '
 alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 alias mux='tmuxinator'
