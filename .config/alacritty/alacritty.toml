@@ -1,5 +1,14 @@
 live_config_reload = true
 
+#THEME
+import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/themes/catppuccin-latte.toml"
+  # "~/.config/alacritty/themes/catppuccin-frappe.toml"
+  # "~/.config/alacritty/themes/catppuccin-macchiato.toml"
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
+]
+
 [env]
 TERM = "xterm-256color"
 
@@ -13,8 +22,8 @@ columns = 200
 lines = 5
 
 [window.padding]
-x = 10
-y = 10
+x = 1
+y = 1
 
 [font]
 size = 13
@@ -35,3 +44,12 @@ style = "Regular"
 family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
+[scrolling]
+history = 5000
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.cursor]
+cursor = "#7dc4e4"
+text = "CellBackground"
