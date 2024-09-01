@@ -88,6 +88,8 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl -- set-sink-volume 0 +3%")),
     # Dmenu_extended
     Key([mod], "m", lazy.spawn("dmenu_extended_run")),
+    # Dmenu
+    # Key([mod], "m", lazy.spawn("dmenu_run")),
     # Full Screen
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     # exit floating
