@@ -136,7 +136,7 @@ alias htmlbase='mkdir css js; touch index.html css/style.css js/script.js'
 alias fetch='fastfetch'
 
 # Exa - Aliases
-alias lc='exa --icons --color=always'
+alias ls='exa --icons --color=always'
 alias lca='exa -lag --icons --color=always'
 # alias lc='exa -la --icons --color=always' #small
 
