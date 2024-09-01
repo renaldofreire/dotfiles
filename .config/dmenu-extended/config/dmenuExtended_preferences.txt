@@ -56,10 +56,8 @@
             "polychromatic-controller"
         ],
         "mullvad-vpn",
-        "webstorm-eap",
         "gimp",
-        "lxappearance",
-        "joplin-desktop"
+        "lxappearance"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
@@ -126,7 +124,8 @@
         "sublime-project"
     ],
     "watch_folders": [
-        "~/",
+        "~/.local",
+        "/usr/local/bin",
         "/usr/bin/"
     ],
     "webbrowser": "xdg-open"
