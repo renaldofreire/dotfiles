@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 
 # Bin path
 export PATH=$PATH:~/.local/bin
+
+export TERMINAL=alacritty
