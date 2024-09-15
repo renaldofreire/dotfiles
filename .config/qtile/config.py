@@ -99,21 +99,15 @@ keys = [
 # groups = [Group(i) for i in "1234567890"] -> default
 groups = [
     Group("1", matches=[Match(wm_class=["Navigator", "firefox", "floorp"])]),
-    Group("2"),
-    Group("3"),
-    Group("4", matches=[Match(wm_class=["Joplin"])]),
+    Group("2", matches=[Match(wm_class=["alacritty"])]),
+    Group("3", matches=[Match(wm_class=["Joplin"])]),
+    Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=["pocket-casts"])]),
+    Group("7", matches=[Match(wm_class=["pocket-casts", "strawberry", "easyeffects"])]),
     Group("8"),
     Group("9", matches=[Match(wm_class=["signal", "element", "telegram-desktop"])]),
-    Group("0"),
-    Group(
-        "0",
-        matches={
-            Match(wm_class=["Mail", "thunderbird",])
-        },
-    ),
+    Group("0", matches=[Match(wm_class=["Mail", "thunderbird"])]),
 ]
 
 for i in groups:
@@ -228,7 +222,6 @@ mouse = [
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
     subprocess.Popen([home])
-
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
