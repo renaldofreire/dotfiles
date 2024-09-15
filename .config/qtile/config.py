@@ -74,14 +74,14 @@ keys = [
 # groups = [Group(i) for i in "1234567890"] -> default
 groups = [
     Group("1", matches=[Match(wm_class=re.compile(r"^(Navigator|firefox)$"))]),
-    Group("2", matches=[Match(wm_class=re.compile(r"^(alacritty)$"))]),
+    Group("2", matches=[Match(wm_class=re.compile(r"^(Alacritty)$"))]),
     Group("3", matches=[Match(wm_class=re.compile(r"^(Joplin)$"))]),
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=re.compile(r"^(pocket-casts|strawberry|easyeffects)$"))]),
+    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|element|telegram-desktop|FFPWA-01HS74TGQZYY58QFDKZC6XECYZ)$"))]),
     Group("8"),
-    Group("9", matches=[Match(wm_class=re.compile(r"^(signal|element|telegram-desktop)$"))]),
+    Group("9", matches=[Match(wm_class=re.compile(r"^(pocket-casts|strawberry|easyeffects)$"))]),
     Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
 ]
 
@@ -213,11 +213,13 @@ floating_layout = layout.Floating(
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(wm_class="signal"),
+        Match(wm_class="FFPWA-01HS74TGQZYY58QFDKZC6XECYZ"), # whatsapp web
         Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
         Match(wm_class="pocket-casts"),
         Match(wm_class="strawberry"),
         Match(wm_class="cryptomator"),
+        Match(wm_class="zenity"),
         Match(wm_class="galculator"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
