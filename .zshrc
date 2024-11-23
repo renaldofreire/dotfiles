@@ -215,5 +215,6 @@ export PATH="$PATH:/home/renaldo/.cargo/bin" #cargo
 # export PATH="~/.local/bin:$PATH"
 
 # ruby: rbenv install
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
