@@ -75,7 +75,7 @@ keys = [
 groups = [
     Group("1", matches=[Match(wm_class=re.compile(r"^(Navigator|firefox)$"))]),
     Group("2", matches=[Match(wm_class=re.compile(r"^(Alacritty)$"))]),
-    Group("3", matches=[Match(wm_class=re.compile(r"^(Joplin)$"))]),
+    Group("3", matches=[Match(wm_class=re.compile(r"^(Joplin|notesnook)$"))]),
     Group("4"),
     Group("5"),
     Group("6"),
