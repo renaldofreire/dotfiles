@@ -1,6 +1,6 @@
 # Firefox 
 ctrl + super + w
-    firefox
+    zen-browser
 
 # Dmenu - migrado para qtile config
 # ctrl + super + m

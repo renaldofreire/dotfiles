@@ -21,7 +21,7 @@
         ],
         [
             "PC - Suspend",
-            "systemctl suspend;"
+            "custom-suspend"
         ],
         [
             "PC - Lock",

@@ -9,6 +9,7 @@ sxhkd &
 crow &
 zen-browser &
 mullvad-vpn &
+notesnook &
 alacritty &
 xset r rate 401 30
 light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
