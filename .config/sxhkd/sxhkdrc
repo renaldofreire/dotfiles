@@ -1,4 +1,4 @@
-# Firefox 
+# Zen browser
 ctrl + super + w
     zen-browser
 
@@ -13,3 +13,7 @@ ctrl + super + f
 # Flameshot
 Print
     flameshot gui
+
+# Flameshot
+# fn + u
+#     flameshot gui
