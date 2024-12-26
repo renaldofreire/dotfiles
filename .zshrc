@@ -12,6 +12,11 @@ export MANPAGER=less
 export TERM='xterm-256color'
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
+# Snap Theme Fix
+export FONTCONFIG_FILE=/etc/fonts/fonts.conf
+export FONTCONFIG_PATH=/etc/fonts/
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
