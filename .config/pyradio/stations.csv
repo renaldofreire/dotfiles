@@ -8,5 +8,6 @@ CBN - SP 90.5,https://playerservices.streamtheworld.com/api/livestream-redirect/
 CBN - RIO 92.5,https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_RJAAC.aac?dist=radioscombr
 CBN - FOR 95.5,https://ice.fabricahost.com.br/cbnfortaleza
 Soul Radio Classics,https://listen.soulradio.us/us
-BBC - Radio 1,http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_radio_one/bbc_radio_one.isml/bbc_radio_one-audio%3d96000.norewind.m3u8
-BBC - Radio 2,http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_radio_two/bbc_radio_two.isml/bbc_radio_two-audio%3d96000.norewind.m3u8
+BBC - Radio 1,http://lstn.lv/bbc.m3u8?station=bbc_radio_one&bitrate=96000
+BBC - Radio 2,http://lstn.lv/bbc.m3u8?station=bbc_radio_two&bitrate=96000
+BBC - Radio Manchester,http://lstn.lv/bbc.m3u8?station=bbc_radio_manchester&bitrate=96000
