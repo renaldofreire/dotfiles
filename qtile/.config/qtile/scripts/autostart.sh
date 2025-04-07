@@ -1,25 +1,23 @@
 #!/bin/sh
 
 picom &
+sxhkd &
 nitrogen --restore
+xset r rate 401 30
 dropbox &
 caffeine &
 nm-applet &
-sxhkd &
 crow &
 zen-browser &
-joplin &
 alacritty &
-xset r rate 401 30
-light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
 light-locker &
+light-locker --lock-after-screensaver=600 --lock-on-suspend & #lighDM screen locker
 joplin &
+strawberry &
 # deepl-linux-electron &
 # notesnook &
-#mullvad-vpn &
 #firefox &
 #megasync &
-# strawberry &
 # mullvad-vpn &
 # librewolf &
 #qbittorrent &
