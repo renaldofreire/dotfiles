@@ -136,7 +136,6 @@ alias tk='task'
 alias sudo='sudo '
 alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 alias mux='tmuxinator'
-alias htmlbase='mkdir css js; touch index.html css/style.css js/script.js'
 alias fetch='fastfetch'
 alias ports='sudo netstat -tulpn'
 
