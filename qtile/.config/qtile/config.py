@@ -109,8 +109,23 @@ for i in groups:
         ]
     )
 
+colors = {
+    "background": "#282a36",
+    "foreground": "#f8f8f2",
+    "comment": "#6272a4",
+    "cyan": "#8be9fd",
+    "green": "#50fa7b",
+    "orange": "#ffb86c",
+    "pink": "#ff79c7",
+    "purple": "#bd93f9",
+    "red": "#ff5555",
+    "yellow": "#f1fa8c",
+    "border_focus_1": "#5bc0f8",
+    "border_focus_2": "#0081c9",
+}
+
 layouts = [
-    layout.Columns(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
+    layout.Columns(border_focus=["border_focus_1", "border_focus_2"], border_width=2, margin=3),
     # layout.MonadTall(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
