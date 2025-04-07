@@ -71,11 +71,11 @@ keys = [
 
 ]
 
-# groups = [Group(i) for i in "1234567890"] -> default
+# Exemplo de simplificação (mas mantendo regex onde útil)
 groups = [
-    Group("1", matches=[Match(wm_class=re.compile(r"^(Navigator)$"))]),
-    Group("2", matches=[Match(wm_class=re.compile(r"^(Alacritty|vscodium)$"))]),
-    Group("3", matches=[Match(wm_class=re.compile(r"^(joplin)$"))]),
+    Group("1", matches=[Match(wm_class="Navigator")]), # String simples
+    Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]), # Múltiplos Match simples
+    Group("3", matches=[Match(wm_class="joplin")]), # String simples
     Group("4"),
     Group("5"),
     Group("6"),
@@ -84,6 +84,21 @@ groups = [
     Group("9", matches=[Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|easyeffects)$"))]),
     Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
 ]
+
+colors = {
+    "background": "#090707",
+    "foreground": "#f8f8f2",
+    "comment": "#6272a4",
+    "cyan": "#8be9fd",
+    "green": "#50fa7b",
+    "purple": "#bd93f9",
+    "red": "#ff5555",
+    "yellow": "#f1fa8c",
+    "border_columns_1": "#c99789",
+    "border_columns_2": "#ffcc5c",
+    "border_monadtall_1": "#68c4af",
+    "border_monadtall_2": "#b8dbd3",
+}
 
 for i in groups:
     keys.extend(
@@ -109,41 +124,26 @@ for i in groups:
         ]
     )
 
-colors = {
-    "background": "#282a36",
-    "foreground": "#f8f8f2",
-    "comment": "#6272a4",
-    "cyan": "#8be9fd",
-    "green": "#50fa7b",
-    "orange": "#ffb86c",
-    "pink": "#ff79c7",
-    "purple": "#bd93f9",
-    "red": "#ff5555",
-    "yellow": "#f1fa8c",
-    "border_focus_1": "#5bc0f8",
-    "border_focus_2": "#0081c9",
-}
-
 layouts = [
-    layout.Columns(border_focus=["border_focus_1", "border_focus_2"], border_width=2, margin=3),
-    # layout.MonadTall(border_focus=["#5bc0f8", "#0081c9"], border_width=2, margin=3),
+    layout.Columns(
+        border_focus=[colors["border_columns_1"], colors["border_columns_2"]],
+        border_width=1,
+        margin=4,
+    ),
+    layout.MonadTall(
+        border_focus=[colors["border_monadtall_1"], colors["border_monadtall_2"]],
+        border_width=1,
+        margin=4,
+    ),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
     font="NotoSans NerdFont",
     fontsize=13,
     padding=5,
+    background=colors["background"],
+    foreground=colors["foreground"],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -164,9 +164,6 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                # widget.TextBox("default config", name="default"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # widget.TextBox("", foreground="#3883c4"),
                 widget.CPUGraph(type="box"),
                 widget.Sep(linewidth=1, padding=5),
                 widget.Memory(
@@ -182,11 +179,8 @@ screens = [
                 ),
                 widget.Sep(linewidth=1, padding=3),
                 widget.Systray(icon_size=15, padding=7),
-                # widget.QuickExit(),
             ],
             20,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     ),
 ]
@@ -206,7 +200,7 @@ mouse = [
 ]
 
 
-# Autostart some apps
+# Autostart
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
@@ -224,34 +218,21 @@ floating_layout = layout.Floating(
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(wm_class="maketag"),
+        Match(wm_class="ssh-askpass"),
         Match(wm_class="deepl-linux-electron"),
         Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
         Match(wm_class="zenity"),
         Match(wm_class="galculator"),
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
+        Match(title="branchdialog"),
+        Match(title="pinentry"),
     ]
 )
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
-
-# If things like steam games want to auto-minimize themselves when losing
-# focus, should we respect this or not?
 auto_minimize = True
-
-# When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
-
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
 wmname = "LG3D"
