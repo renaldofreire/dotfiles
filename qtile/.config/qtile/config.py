@@ -68,7 +68,6 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     # exit floating
     Key([mod], "Escape", lazy.window.toggle_floating()),
-
 ]
 
 # Exemplo de simplificação (mas mantendo regex onde útil)
@@ -81,7 +80,12 @@ groups = [
     Group("6"),
     Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop)$"))]),
     Group("8"),
-    Group("9", matches=[Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|easyeffects)$"))]),
+    Group(
+        "9",
+        matches=[
+            Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|easyeffects)$"))
+        ],
+    ),
     Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
 ]
 
@@ -172,9 +176,8 @@ screens = [
                 widget.Sep(linewidth=1, padding=5),
                 widget.Clock(format=" %a, %d/%m - %Hh%M"),
                 widget.Sep(linewidth=1, padding=3),
-                # TODO: fix emoji + vol data in same widget
                 widget.Volume(
-                    fmt='  {}',
+                    fmt="  {}",
                     limit_max_volume=True,
                 ),
                 widget.Sep(linewidth=1, padding=3),
