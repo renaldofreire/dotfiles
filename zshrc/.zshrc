@@ -147,14 +147,10 @@ alias lca='exa -lag --icons --color=always'
 # Goto - Aliases
 alias cddown='cd ~/Downloads/'
 alias cdqtile='cd ~/.config/qtile/'
-alias cdvim='cd ~/.config/nvim/; v .;'
 alias cddoc='cd ~/Documents/'
 alias cdproj='cd ~/projects/'
 alias cddoc='cd ~/Documents/'
-# alias cdodin='cd /mnt/SSDFiles/projects/odin-repo'
-# alias cdnotes='cd /mnt/SSDFiles/projects/notes/; nvim todo.md'
-#alias task='cd /home/renaldo/Dropbox/Apps/TaskTxt; nvim task.md'
-# alias cdssd='cd /mnt/SSDFiles/'
+alias cddot='cd ~/dotfiles/'
 
 # Git - Aliases
 gcom() {
