@@ -6,10 +6,6 @@ ctrl + super + w
 # ctrl + super + m
    # dmenu_extended_run
 
-# Ranger
-# ctrl + super + f
-#     alacritty -e ranger
-
 # NNN - n³
 ctrl + super + f
     alacritty -e nnn
@@ -18,3 +14,10 @@ ctrl + super + f
 Print
     flameshot gui
 
+# Redshift on
+shift + F11
+    alacritty -e redshift -O 4400
+
+# Redshift off
+shift + F12
+    alacritty -e redshift -x
