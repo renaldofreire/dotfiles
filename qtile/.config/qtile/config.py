@@ -79,10 +79,9 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[
-        Match(wm_class=re.compile(r"^(signal|telegram-desktop)$"))]),
+    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop)$"))]),
     Group("8"),
-    Group("9", matches=[Match(wm_class=re.compile(r"^(pocket-casts|strawberry|easyeffects)$"))]),
+    Group("9", matches=[Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|easyeffects)$"))]),
     Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
 ]
 
