@@ -1,0 +1,23 @@
+# Zen browser
+ctrl + super + w
+    zen-browser
+
+# Dmenu - migrado para qtile config
+# ctrl + super + m
+   # dmenu_extended_run
+
+# Ranger
+# ctrl + super + f
+#     alacritty -e ranger
+
+# NNN - n³
+ctrl + super + f
+    alacritty -e nnn
+
+# Flameshot
+Print
+    flameshot gui
+
+# Flameshot
+# fn + u
+#     flameshot gui
