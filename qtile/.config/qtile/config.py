@@ -73,9 +73,9 @@ keys = [
 
 # Exemplo de simplificação (mas mantendo regex onde útil)
 groups = [
-    Group("1", matches=[Match(wm_class="Navigator")]), # String simples
-    Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]), # Múltiplos Match simples
-    Group("3", matches=[Match(wm_class="joplin")]), # String simples
+    Group("1", matches=[Match(wm_class="Navigator")]),
+    Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
+    Group("3", matches=[Match(wm_class="joplin")]),
     Group("4"),
     Group("5"),
     Group("6"),
