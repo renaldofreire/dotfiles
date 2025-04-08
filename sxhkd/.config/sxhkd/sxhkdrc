@@ -12,7 +12,7 @@ ctrl + super + f
 
 # Flameshot
 Print
-    flameshot gui
+    alacritty -e flameshot gui
 
 # Redshift on
 shift + F11
