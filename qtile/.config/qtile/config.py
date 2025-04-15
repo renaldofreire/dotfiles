@@ -124,11 +124,6 @@ layouts = [
         border_width=1,
         margin=4,
     ),
-    layout.MonadTall(
-        border_focus=[colors["border_monadtall_1"], colors["border_monadtall_2"]],
-        border_width=1,
-        margin=4,
-    ),
     layout.Max(),
 ]
 
