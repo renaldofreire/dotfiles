@@ -29,9 +29,6 @@
             "reboot;"
         ],
         [
-            "MullvadVPN",
-            "mullvad-vpn;"
-        ],
         [
             "PC - Shutdown",
             "shutdown now;"
