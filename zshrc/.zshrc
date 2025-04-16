@@ -151,6 +151,7 @@ alias cddoc='cd ~/Documents/'
 alias cdproj='cd ~/projects/'
 alias cddoc='cd ~/Documents/'
 alias cddot='cd ~/dotfiles/'
+alias cdconf='cd ~/.config/'
 
 # Git - Aliases
 gcom() {
