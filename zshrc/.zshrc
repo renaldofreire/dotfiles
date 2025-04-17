@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 # tmux
 if [ "$TMUX" = "" ]; then tmux; fi
@@ -140,9 +141,9 @@ alias fetch='fastfetch'
 alias ports='sudo netstat -tulpn'
 
 # Exa - Aliases
-alias ls='exa --icons --color=always'
-alias lca='exa -lag --icons --color=always'
-# alias lc='exa -la --icons --color=always' #small
+alias ls='eza --icons --color=always'
+alias lca='eza -lag --icons --color=always'
+# alias lc='eza -la --icons --color=always' #small
 
 # Goto - Aliases
 alias cddown='cd ~/Downloads/'
