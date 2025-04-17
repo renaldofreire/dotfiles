@@ -18,19 +18,19 @@
         "htop;",
         [
             "PC - Suspend",
-            "systemclt suspend;"
+            "suspend-pc"
         ],
         [
             "PC - Lock",
-            "light-locker-command -l;"
+            "lock-screen"
         ],
         [
             "PC - Reboot",
-            "reboot;"
+            "reboot-pc"
         ],
         [
             "PC - Shutdown",
-            "shutdown now;"
+            "shutdown now"
         ]
     ],
     "indicator_alias": "",
