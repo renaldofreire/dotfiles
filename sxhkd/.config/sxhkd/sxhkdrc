@@ -11,8 +11,9 @@ ctrl + super + f
     alacritty -e nnn
 
 # Flameshot
+    #alacritty -e flameshot
 Print
-    alacritty -e flameshot gui
+    nohup flameshot gui &
 
 # Redshift on
 shift + F11
