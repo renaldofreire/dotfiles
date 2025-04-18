@@ -1,0 +1,94 @@
+[Default Applications]
+x-scheme-handler/http=zen.desktop
+x-scheme-handler/https=zen.desktop
+x-scheme-handler/chrome=zen.desktop
+text/html=zen.desktop
+application/x-extension-htm=zen.desktop
+application/x-extension-html=zen.desktop
+application/x-extension-shtml=zen.desktop
+application/xhtml+xml=zen.desktop
+application/x-extension-xhtml=zen.desktop
+application/x-extension-xht=zen.desktop
+x-scheme-handler/discord-1352351827206733974=discord-1352351827206733974.desktop
+
+[Added Associations]
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;
+text/html=zen.desktop;
+application/x-extension-htm=zen.desktop;
+application/x-extension-html=zen.desktop;
+application/x-extension-shtml=zen.desktop;
+application/xhtml+xml=zen.desktop;
+application/x-extension-xhtml=zen.desktop;
+application/x-extension-xht=zen.desktop;
+
+# My Custom
+
+# text editor
+text/plain=org.gnome.gedit.desktop;
+text/markdown=codium.desktop
+text/x-python=codium.desktop
+text/x-c++src=codium.desktop
+text/x-java=codium.desktop
+application/json=codium.desktop
+application/xml=codium.desktop
+
+# Arquivos PDF e Documentos
+application/pdf=org.kde.okular.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
+application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop
+
+# Imagens
+image/jpeg=feh.desktop
+image/png=feh.desktop
+image/gif=feh.desktop
+image/webp=feh.desktop
+image/svg+xml=feh.desktop
+image/tiff=feh.desktop
+image/bmp=feh.desktop
+#image/x-xcf=gimp.desktop
+#image/x-photoshop=gimp.desktop
+
+# Áudio
+audio/mp3=org.strawberrymusicplayer.desktop
+audio/flac=org.strawberrymusicplayer.desktop
+audio/aac=org.strawberrymusicplayer.desktop
+audio/ogg=org.strawberrymusicplayer.desktop
+audio/wav=org.strawberrymusicplayer.desktop
+audio/webm=org.strawberrymusicplayer.desktop
+audio/x-opus+ogg=org.strawberrymusicplayer.desktop
+
+# Vídeo
+video/mp4=vlc.desktop
+video/x-matroska=vlc.desktop
+video/webm=vlc.desktop
+video/quicktime=vlc.desktop
+video/x-msvideo=vlc.desktop
+video/ogg=vlc.desktop
+
+# Arquivos compactados
+application/zip=xarchiver.desktop
+application/x-rar=xarchiver.desktop
+application/x-7z-compressed=xarchiver.desktop
+application/x-tar=xarchiver.desktop
+application/x-bzip2=xarchiver.desktop
+application/gzip=xarchiver.desktop
+application/x-xz=xarchiver.desktop
+
+# Torrents
+#application/x-bittorrent=transmission-gtk.desktop
+#x-scheme-handler/magnet=transmission-gtk.desktop
+
+# Email
+x-scheme-handler/mailto=thunderbird.desktop
+
+# Terminais
+#obs: nao encontrei o alacrrity.desktop
+#x-scheme-handler/terminal=alacritty.desktop
+
+
