@@ -128,9 +128,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="NotoSans NerdFont",
+    font="Ubuntu Nerd Font",
     fontsize=13,
-    padding=5,
+    padding=3,
     background=colors["background"],
     foreground=colors["foreground"],
 )
@@ -169,6 +169,7 @@ screens = [
                 widget.Systray(icon_size=15, padding=7),
             ],
             20,
+            background="00000000",
         ),
     ),
 ]

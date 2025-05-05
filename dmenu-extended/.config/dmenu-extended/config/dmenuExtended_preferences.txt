@@ -29,9 +29,14 @@
             "reboot-pc"
         ],
         [
+            "Anki-flatpak",
+            "flatpak run net.ankiweb.Anki"
+        ],
+        [
             "PC - Shutdown",
             "shutdown now"
-        ]
+        ],
+        "mullvad-vpn"
     ],
     "indicator_alias": "",
     "indicator_edit": "*",
