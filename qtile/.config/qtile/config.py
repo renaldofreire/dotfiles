@@ -68,7 +68,7 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop)$"))]),
+    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop|discord)$"))]),
     Group("8"),
     Group(
         "9",
@@ -209,7 +209,6 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),
         Match(wm_class="ssh-askpass"),
-        Match(wm_class="deepl-linux-electron"),
         Match(wm_class="session-messenger-desktop"),
         Match(wm_class="telegram-desktop"),
         Match(wm_class="zenity"),
