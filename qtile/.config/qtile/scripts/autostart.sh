@@ -10,6 +10,7 @@ crow &
 zen-browser &
 alacritty &
 joplin &
+easyeffects &
 strawberry &
 light-locker --lock-after-screensaver=10 --lock-on-suspend &
 xset r rate 401 30
