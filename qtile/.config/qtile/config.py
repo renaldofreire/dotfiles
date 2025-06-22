@@ -68,7 +68,7 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop|discord)$"))]),
+    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop|discord|FFPWA-01JWMJBS7S1ZP3J868TGA3AM0G)$"))]),
     Group("8"),
     Group(
         "9",
