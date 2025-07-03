@@ -9,7 +9,7 @@ nm-applet &
 crow &
 zen-browser &
 alacritty &
-joplin &
+net.cozic.joplin_desktop &
 easyeffects &
 strawberry &
 light-locker --lock-after-screensaver=10 --lock-on-suspend &

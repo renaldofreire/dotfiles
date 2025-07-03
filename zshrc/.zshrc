@@ -15,6 +15,11 @@ export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 export MANPAGER=less
 
+# Para Flatpaks instalados pelo usuário
+export XDG_DATA_DIRS="${XDG_DATA_DIRS}:~/.local/share/flatpak/exports/share/"
+# Para Flatpaks instalados em todo o sistema
+export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/flatpak/exports/share/"
+
 # Uniform theme
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export QT_QPA_PLATFORMTHEME='qt6ct'
@@ -153,6 +158,7 @@ alias cdproj='cd ~/projects/'
 alias cddoc='cd ~/Documents/'
 alias cddot='cd ~/dotfiles/'
 alias cdconf='cd ~/.config/'
+alias cdvim='~/.config/nvim/'
 
 # Git - Aliases
 gcom() {

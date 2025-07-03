@@ -33,6 +33,15 @@
             "flatpak run net.ankiweb.Anki"
         ],
         [
+            "Warehouse-flatpak",
+            "flatpak run io.github.flattool.Warehouse"
+        ],
+        [
+            "Cryptomator-flatpak",
+            "flatpak run org.cryptomator.Cryptomator"
+        ],
+ 
+        [
             "PC - Shutdown",
             "shutdown now"
         ],
