@@ -166,7 +166,7 @@ screens = [
                     limit_max_volume=True,
                 ),
                 widget.Sep(linewidth=1, padding=3),
-                widget.Systray(icon_size=15, padding=7),
+                widget.Systray(icon_size=16, padding=7, background=None),
             ],
             20,
             background="00000000",
