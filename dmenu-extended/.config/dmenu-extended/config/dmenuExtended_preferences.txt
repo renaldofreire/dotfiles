@@ -28,22 +28,25 @@
             "PC - Reboot",
             "reboot-pc"
         ],
+	[
+            "PC - Shutdown",
+            "shutdown now"
+        ],
         [
             "Anki-flatpak",
-            "flatpak run net.ankiweb.Anki"
+            "net.ankiweb.Anki"
         ],
         [
             "Warehouse-flatpak",
-            "flatpak run io.github.flattool.Warehouse"
+            "io.github.flattool.Warehouse"
+        ],
+        [
+            "VLC",
+            "org.videolan.VLC"
         ],
         [
             "Cryptomator-flatpak",
-            "flatpak run org.cryptomator.Cryptomator"
-        ],
- 
-        [
-            "PC - Shutdown",
-            "shutdown now"
+            "org.cryptomator.Cryptomator"
         ],
         "mullvad-vpn"
     ],
