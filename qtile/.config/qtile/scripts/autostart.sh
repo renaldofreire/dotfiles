@@ -18,11 +18,13 @@ zen-browser &
 alacritty &
 net.cozic.joplin_desktop &
 org.kde.CrowTranslate &
-dropbox &
+#dbus-launch dropbox &
+(sleep 3 && dropbox) &
 
 #easyeffects &
 #firefox &
 #megasync &
 # mullvad-vpn &
 #qbittorrent &
+#dropbox &
 
