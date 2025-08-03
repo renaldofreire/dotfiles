@@ -46,10 +46,10 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # Sound
+    # Audio - amixer control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl -- set-sink-volume 0 -3%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl -- set-sink-volume 0 +3%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
     # Dmenu_extended
     Key([mod], "m", lazy.spawn("dmenu_extended_run")),
     # Key([mod], "m", lazy.spawn("dmenu_run")),
@@ -68,7 +68,16 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7", matches=[Match(wm_class=re.compile(r"^(signal|telegram-desktop|discord|FFPWA-01JWMJBS7S1ZP3J868TGA3AM0G)$"))]),
+    Group(
+        "7",
+        matches=[
+            Match(
+                wm_class=re.compile(
+                    r"^(signal|telegram-desktop|discord|FFPWA-01JWMJBS7S1ZP3J868TGA3AM0G)$"
+                )
+            )
+        ],
+    ),
     Group("8"),
     Group(
         "9",
@@ -162,8 +171,22 @@ screens = [
                 widget.Clock(format=" %a, %d/%m - %Hh%M"),
                 widget.Sep(linewidth=1, padding=3),
                 widget.Volume(
-                    fmt="  {}",
-                    limit_max_volume=True,
+                    # --- Configuração Essencial para Sincronia ---
+                    channel="Master",  # Garante que o widget leia o volume do canal Master
+                    # --- Melhorias Visuais (Requer Nerd Font) ---
+                    fmt="{}",  # O formato agora é controlado pela lista de emojis
+                    emoji=True,  # Ativa o uso de emojis para o estado do volume
+                    emoji_list=["🔇", "", "", ""],  # [Mudo, Baixo, Médio, Alto]
+                    # --- Funcionalidades Adicionais ---
+                    volume_app="pavucontrol",  # App para abrir ao clicar (funciona com PipeWire)
+                    limit_max_volume=True,  # Impede que o volume ultrapasse o limite máximo
+                    padding=5,
+                ),
+                widget.Volume(
+                    channel="Master",
+                    # O formato agora exibe o valor numérico seguido do símbolo '%'
+                    fmt="{}",
+                    padding=2,
                 ),
                 widget.Sep(linewidth=1, padding=3),
                 widget.Systray(icon_size=16, padding=7, background=None),
