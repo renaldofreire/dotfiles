@@ -6,6 +6,16 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+# qtile-extras import
+try:
+    import qtile_extras.widget as qe_widget
+    from qtile_extras.widget.decorations import RectDecoration, PowerLineDecoration
+
+    QTILE_EXTRAS_AVAILABLE = True
+except ImportError:
+    print("Qtile-extras não está disponível. Instale com: pip install qtile-extras")
+    QTILE_EXTRAS_AVAILABLE = False
+
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -59,8 +69,6 @@ keys = [
     Key([mod], "Escape", lazy.window.toggle_floating()),
 ]
 
-
-# Exemplo de simplificação (mas mantendo regex onde útil)
 groups = [
     Group("1", matches=[Match(wm_class="Navigator")]),
     Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
@@ -101,6 +109,13 @@ colors = {
     "border_columns_2": "#ffcc5c",
     "border_monadtall_1": "#68c4af",
     "border_monadtall_2": "#b8dbd3",
+    # Cores adicionais para qtile-extras
+    "blue": "#6272a4",
+    "orange": "#ffb86c",
+    "pink": "#ff79c6",
+    "background_alt": "#44475a",
+    "selection": "#44475a",
+    "inactive": "#6272a4",
 }
 
 for i in groups:
@@ -145,54 +160,146 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+# qtile-extras decorations
+if QTILE_EXTRAS_AVAILABLE:
+    powerline = {"decorations": [PowerLineDecoration(path="arrow_right")]}
+
+    rounded_rect = {
+        "decorations": [
+            RectDecoration(
+                colour=colors["background_alt"],
+                radius=9,
+                filled=True,
+                padding_y=2,
+                group=True,
+            )
+        ]
+    }
+else:
+    powerline = {}
+    rounded_rect = {}
+
 screens = [
     Screen(
         top=bar.Bar(
             [
-                # widget.TextBox(" ", foreground="#3883c4", fontsize="14"),
-                widget.GroupBox(hide_unused=True),
+                # initial icon
+                widget.TextBox(
+                    text="",
+                    foreground=colors["cyan"],
+                    fontsize=16,
+                    padding=10,
+                ),
+                widget.GroupBox(
+                    hide_unused=True,
+                    highlight_method="block",
+                    active=colors["cyan"],
+                    inactive=colors["inactive"],
+                    this_current_screen_border=colors["purple"],
+                    urgent_border=colors["red"],
+                    **rounded_rect if QTILE_EXTRAS_AVAILABLE else {},
+                ),
                 widget.Sep(linewidth=1, padding=3),
-                widget.CurrentLayout(),
+                widget.CurrentLayout(
+                    foreground=colors["yellow"],
+                    **powerline if QTILE_EXTRAS_AVAILABLE else {},
+                ),
                 widget.Sep(linewidth=1, padding=3),
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.WindowName(
+                    foreground=colors["foreground"],
+                    max_chars=50,
+                ),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
+                        "launch": (colors["red"], colors["foreground"]),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.CPUGraph(type="box"),
+                # Spacer para empurrar widgets para a direita
+                widget.Spacer(),
+                # Widgets do qtile-extras (se disponível)
+                *(
+                    [
+                        # widget.Sep(linewidth=1, padding=5),
+                        # Status da bateria (se aplicável)
+                        # (
+                        #     qe_widget.BatteryIcon(
+                        #         theme_path="/usr/share/icons/Papirus/symbolic/",
+                        #         **rounded_rect
+                        #     )
+                        #     if os.path.exists("/sys/class/power_supply/BAT0")
+                        #     else widget.TextBox("")
+                        # ),
+                    ]
+                    if QTILE_EXTRAS_AVAILABLE
+                    else []
+                ),
+                # CPU Graph
+                widget.CPUGraph(
+                    type="box",
+                    graph_color=colors["cyan"],
+                    fill_color=colors["cyan"],
+                    border_color=colors["background_alt"],
+                ),
                 widget.Sep(linewidth=1, padding=5),
                 widget.Memory(
-                    format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}", measure_mem="G"
+                    format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}",
+                    measure_mem="G",
+                    foreground=colors["green"],
+                    **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
                 widget.Sep(linewidth=1, padding=5),
-                widget.Clock(format=" %a, %d/%m - %Hh%M"),
-                widget.Sep(linewidth=1, padding=3),
-                widget.Volume(
-                    # --- Configuração Essencial para Sincronia ---
-                    channel="Master",  # Garante que o widget leia o volume do canal Master
-                    # --- Melhorias Visuais (Requer Nerd Font) ---
-                    fmt="{}",  # O formato agora é controlado pela lista de emojis
-                    emoji=True,  # Ativa o uso de emojis para o estado do volume
-                    emoji_list=["🔇", "", "", ""],  # [Mudo, Baixo, Médio, Alto]
-                    # --- Funcionalidades Adicionais ---
-                    volume_app="pavucontrol",  # App para abrir ao clicar (funciona com PipeWire)
-                    limit_max_volume=True,  # Impede que o volume ultrapasse o limite máximo
-                    padding=5,
+                widget.Clock(
+                    format=" %a, %d/%m |  %H:%M",
+                    foreground=colors["purple"],
+                    **rounded_rect if QTILE_EXTRAS_AVAILABLE else {},
                 ),
+                widget.Sep(linewidth=1, padding=3),
                 widget.Volume(
                     channel="Master",
-                    # O formato agora exibe o valor numérico seguido do símbolo '%'
+                    fmt="{}",
+                    emoji=True,
+                    emoji_list=["🔇", "", "", ""],
+                    volume_app="pavucontrol",
+                    limit_max_volume=True,
+                    padding=5,
+                    foreground=colors["yellow"],
+                    **powerline if QTILE_EXTRAS_AVAILABLE else {},
+                ),
+                # volume: value
+                widget.Volume(
+                    channel="Master",
                     fmt="{}",
                     padding=2,
+                    foreground=colors["yellow"],
                 ),
-                widget.Sep(linewidth=1, padding=3),
-                widget.Systray(icon_size=16, padding=7, background=None),
+                widget.Sep(linewidth=1, padding=7),
+                # StatusNotifier or widgets extras
+                *(
+                    [
+                        qe_widget.StatusNotifier(
+                            icon_theme="Papirus-Dark",
+                            icon_size=16,
+                            padding=5,
+                            background=None,
+                            **rounded_rect,
+                        )
+                    ]
+                    if QTILE_EXTRAS_AVAILABLE
+                    else [
+                        widget.StatusNotifier(
+                            icon_theme="Papirus-Dark",
+                            icon_size=16,
+                            padding=5,
+                            background=None,
+                        )
+                    ]
+                ),
             ],
-            20,
+            20,  # anterior era 24
             background="00000000",
+            margin=[4, 4, 0, 4] if QTILE_EXTRAS_AVAILABLE else [0, 0, 0, 0],
         ),
     ),
 ]
@@ -216,7 +323,8 @@ mouse = [
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
-    subprocess.Popen([home])
+    # Adiciona 'sh -c' para garantir a execução via shell e '&' para rodar em background
+    os.system(f"sh -c {home} &")
 
 
 dgroups_key_binder = None
@@ -244,9 +352,6 @@ floating_layout = layout.Floating(
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
-
 auto_minimize = True
-
 wl_input_rules = None
-
 wmname = "LG3D"
