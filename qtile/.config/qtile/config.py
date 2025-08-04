@@ -97,25 +97,19 @@ groups = [
 ]
 
 colors = {
-    "background": "#090707",
-    "foreground": "#f8f8f2",
-    "comment": "#6272a4",
-    "cyan": "#8be9fd",
-    "green": "#50fa7b",
-    "purple": "#bd93f9",
-    "red": "#ff5555",
-    "yellow": "#f1fa8c",
-    "border_columns_1": "#c99789",
-    "border_columns_2": "#ffcc5c",
-    "border_monadtall_1": "#68c4af",
-    "border_monadtall_2": "#b8dbd3",
-    # Cores adicionais para qtile-extras
-    "blue": "#6272a4",
-    "orange": "#ffb86c",
-    "pink": "#ff79c6",
-    "background_alt": "#44475a",
-    "selection": "#44475a",
-    "inactive": "#6272a4",
+    "background": "#050301",  # Preto Raven
+    "foreground": "#FDF5AA",
+    "primary": "#34699A",
+    "secondary": "#58A0C8",
+    "accent": "#FDF5AA",
+    "urgent": "#FF6B6B",
+    "inactive": "#7BA7D1",
+    "selection": "#2C5F8A",
+    "border_active": "#58A0C8",
+    "border_inactive": "#34699A",  # Azul médio para bordas inativas
+    "success": "#4ECDC4",
+    "warning": "#FFE66D",
+    "error": "#FF6B6B",
 }
 
 for i in groups:
@@ -135,20 +129,21 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
 layouts = [
     layout.Columns(
-        border_focus=[colors["border_columns_1"], colors["border_columns_2"]],
-        border_width=1,
+        border_focus=[colors["border_active"], colors["secondary"]],
+        border_normal=colors["border_inactive"],
+        border_width=2,
         margin=4,
     ),
-    layout.Max(),
+    layout.Max(
+        border_focus=colors["border_active"],
+        border_normal=colors["border_inactive"],
+        border_width=2,
+    ),
 ]
 
 widget_defaults = dict(
@@ -167,7 +162,7 @@ if QTILE_EXTRAS_AVAILABLE:
     rounded_rect = {
         "decorations": [
             RectDecoration(
-                colour=colors["background_alt"],
+                colour=colors["selection"],
                 radius=9,
                 filled=True,
                 padding_y=2,
@@ -186,33 +181,45 @@ screens = [
                 # initial icon
                 widget.TextBox(
                     text="",
-                    foreground=colors["cyan"],
+                    foreground=colors["secondary"],
                     fontsize=16,
                     padding=10,
                 ),
                 widget.GroupBox(
                     hide_unused=True,
                     highlight_method="block",
-                    active=colors["cyan"],
+                    active=colors["accent"],
                     inactive=colors["inactive"],
-                    this_current_screen_border=colors["purple"],
-                    urgent_border=colors["red"],
+                    this_current_screen_border=colors["secondary"],
+                    urgent_border=colors["urgent"],
+                    block_highlight_text_color=colors["background"],
                     **rounded_rect if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                widget.Sep(linewidth=1, padding=3),
+                widget.Sep(
+                    linewidth=1,
+                    padding=3,
+                    foreground=colors["primary"],
+                ),
                 widget.CurrentLayout(
-                    foreground=colors["yellow"],
+                    foreground=colors["accent"],
                     **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                widget.Sep(linewidth=1, padding=3),
-                widget.Prompt(),
+                widget.Sep(
+                    linewidth=1,
+                    padding=3,
+                    foreground=colors["primary"],
+                ),
+                widget.Prompt(
+                    foreground=colors["accent"],
+                    cursor_color=colors["secondary"],
+                ),
                 widget.WindowName(
                     foreground=colors["foreground"],
                     max_chars=50,
                 ),
                 widget.Chord(
                     chords_colors={
-                        "launch": (colors["red"], colors["foreground"]),
+                        "launch": (colors["urgent"], colors["foreground"]),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
@@ -235,27 +242,39 @@ screens = [
                     if QTILE_EXTRAS_AVAILABLE
                     else []
                 ),
-                # CPU Graph
                 widget.CPUGraph(
                     type="box",
-                    graph_color=colors["cyan"],
-                    fill_color=colors["cyan"],
-                    border_color=colors["background_alt"],
+                    graph_color=colors["secondary"],
+                    fill_color=colors["secondary"],
+                    border_color=colors["primary"],
+                    background=colors["background"],
                 ),
-                widget.Sep(linewidth=1, padding=5),
+                widget.Sep(
+                    linewidth=1,
+                    padding=5,
+                    foreground=colors["primary"],
+                ),
                 widget.Memory(
                     format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}",
                     measure_mem="G",
-                    foreground=colors["green"],
+                    foreground=colors["success"],
                     **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                widget.Sep(linewidth=1, padding=5),
+                widget.Sep(
+                    linewidth=1,
+                    padding=5,
+                    foreground=colors["primary"],
+                ),
                 widget.Clock(
-                    format=" %a, %d/%m |  %H:%M",
-                    foreground=colors["purple"],
+                    format=" %a, %d/%m - %H:%M",
+                    foreground=colors["accent"],
                     **rounded_rect if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                widget.Sep(linewidth=1, padding=3),
+                widget.Sep(
+                    linewidth=1,
+                    padding=3,
+                    foreground=colors["primary"],
+                ),
                 widget.Volume(
                     channel="Master",
                     fmt="{}",
@@ -264,17 +283,21 @@ screens = [
                     volume_app="pavucontrol",
                     limit_max_volume=True,
                     padding=5,
-                    foreground=colors["yellow"],
+                    foreground=colors["warning"],
                     **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                # volume: value
+                # volume: percentage
                 widget.Volume(
                     channel="Master",
                     fmt="{}",
                     padding=2,
-                    foreground=colors["yellow"],
+                    foreground=colors["warning"],
                 ),
-                widget.Sep(linewidth=1, padding=7),
+                widget.Sep(
+                    linewidth=1,
+                    padding=7,
+                    foreground=colors["primary"],
+                ),
                 # StatusNotifier or widgets extras
                 *(
                     [
@@ -282,8 +305,7 @@ screens = [
                             icon_theme="Papirus-Dark",
                             icon_size=16,
                             padding=5,
-                            background=None,
-                            **rounded_rect,
+                            background="#050301",
                         )
                     ]
                     if QTILE_EXTRAS_AVAILABLE
@@ -292,14 +314,13 @@ screens = [
                             icon_theme="Papirus-Dark",
                             icon_size=16,
                             padding=5,
-                            background=None,
+                            background="#050301",
                         )
                     ]
                 ),
             ],
-            20,  # anterior era 24
-            background="00000000",
-            margin=[4, 4, 0, 4] if QTILE_EXTRAS_AVAILABLE else [0, 0, 0, 0],
+            22,  # default = 24
+            margin=[0, 0, 0, 0],
         ),
     ),
 ]
@@ -323,8 +344,7 @@ mouse = [
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
-    # Adiciona 'sh -c' para garantir a execução via shell e '&' para rodar em background
-    os.system(f"sh -c {home} &")
+    subprocess.Popen(["sh", home])
 
 
 dgroups_key_binder = None
@@ -333,6 +353,9 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
+    border_focus=colors["border_active"],
+    border_normal=colors["border_inactive"],
+    border_width=2,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -346,7 +369,7 @@ floating_layout = layout.Floating(
         Match(wm_class="galculator"),
         Match(title="branchdialog"),
         Match(title="pinentry"),
-    ]
+    ],
 )
 
 auto_fullscreen = True

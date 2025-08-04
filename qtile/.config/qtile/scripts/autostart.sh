@@ -7,6 +7,9 @@ export SSH_AUTH_SOCK
 # 2. Configurações do Sistema e Serviços de Fundo (daemons)
 killall -q picom light-locker nm-applet caffeine
 
+# Aguarda um momento para garantir que os processos foram terminados
+sleep 1
+
 # Inicia os serviços
 picom &
 sxhkd &
@@ -15,16 +18,19 @@ nitrogen --restore &
 /usr/lib/xdg-desktop-portal-gtk &
 nm-applet &
 caffeine &
-easyeffects --gapplication-service &
+easyeffects &
 
 # Configurações instantâneas (não precisam de '&')
 xset r rate 300 50
 xset s 600
 
+# Aguarda os serviços de sistema estarem prontos
+sleep 2
+
 # 3. Aplicações do Usuário (com atrasos para não sobrecarregar)
-(sleep 1 && alacritty) &
-(sleep 2 && zen-browser) &
-(sleep 3 && net.cozic.joplin_desktop) &
-(sleep 3 && org.kde.CrowTranslate) &
-(sleep 4 && strawberry) &
-(sleep 5 && dbus-launch dropbox) &
+(sleep 3 && alacritty) &
+(sleep 4 && zen-browser) &
+(sleep 5 && net.cozic.joplin_desktop) &
+(sleep 5 && org.kde.CrowTranslate) &
+(sleep 6 && org.strawberrymusicplayer.strawberry) &
+(sleep 7 && dropbox) &
