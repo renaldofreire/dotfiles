@@ -56,10 +56,18 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # Audio - amixer control
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
+    # Audio - PulseAudio control
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
+    ),
     # Dmenu_extended
     Key([mod], "m", lazy.spawn("dmenu_extended_run")),
     # Key([mod], "m", lazy.spawn("dmenu_run")),
@@ -275,23 +283,24 @@ screens = [
                     padding=3,
                     foreground=colors["primary"],
                 ),
-                widget.Volume(
+                widget.PulseVolume(
                     channel="Master",
                     fmt="{}",
                     emoji=True,
                     emoji_list=["🔇", "", "", ""],
                     volume_app="pavucontrol",
-                    limit_max_volume=True,
+                    limit_max_volume=False,
                     padding=5,
                     foreground=colors["warning"],
                     **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
                 # volume: percentage
-                widget.Volume(
+                widget.PulseVolume(
                     channel="Master",
                     fmt="{}",
                     padding=2,
                     foreground=colors["warning"],
+                    limit_max_volume=False,
                 ),
                 widget.Sep(
                     linewidth=1,
