@@ -10,13 +10,21 @@ killall -q picom light-locker nm-applet caffeine
 # Aguarda um momento para garantir que os processos foram terminados
 sleep 1
 
-# Inicia os serviços
+# Inicia os serviços de sistema primeiro
 picom &
 sxhkd &
 light-locker --lock-after-screensaver=10 --lock-on-suspend &
 nitrogen --restore &
+
+# Inicia o portal XDG antes do StatusNotifier
 /usr/lib/xdg-desktop-portal-gtk &
-nm-applet &
+sleep 1
+
+# Network Manager com configurações específicas para StatusNotifier
+/usr/bin/nm-applet --sm-disable --indicator &
+# nm-applet --indicator &
+
+# Outros serviços
 caffeine &
 easyeffects &
 
@@ -33,4 +41,4 @@ sleep 2
 (sleep 5 && net.cozic.joplin_desktop) &
 (sleep 5 && org.kde.CrowTranslate) &
 (sleep 6 && org.strawberrymusicplayer.strawberry) &
-(sleep 7 && dropbox) &
+(sleep 7 && dropbox start) &
