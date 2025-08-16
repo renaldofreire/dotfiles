@@ -225,3 +225,8 @@ export PATH="$PATH:/home/renaldo/.cargo/bin" #cargo
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init - zsh)"
 
+# zenta mindfulness
+alias breath='zenta now --quick'
+alias breathe='zenta now'
+alias anchor='zenta anchor'
+alias reflect='zenta reflect'
