@@ -230,3 +230,4 @@ alias breath='zenta now --quick'
 alias breathe='zenta now'
 alias anchor='zenta anchor'
 alias reflect='zenta reflect'
+source ~/.profile
