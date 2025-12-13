@@ -26,7 +26,7 @@ sleep 1
 
 # Outros serviços
 caffeine &
-easyeffects &
+#easyeffects &
 
 # Configurações instantâneas (não precisam de '&')
 xset r rate 300 50
