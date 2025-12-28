@@ -159,6 +159,7 @@ alias cddoc='cd ~/Documents/'
 alias cddot='cd ~/dotfiles/'
 alias cdconf='cd ~/.config/'
 alias cdvim='~/.config/nvim/'
+alias cdmedia='/run/user/1000/gvfs/smb-share:server=10.1.0.129,share=nas-media'
 
 # Git - Aliases
 gcom() {
