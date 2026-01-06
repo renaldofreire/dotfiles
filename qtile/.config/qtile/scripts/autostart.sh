@@ -39,6 +39,5 @@ sleep 2
 (sleep 3 && alacritty) &
 (sleep 4 && zen-browser) &
 (sleep 5 && net.cozic.joplin_desktop) &
-#(sleep 5 && org.kde.CrowTranslate) &
 (sleep 6 && org.strawberrymusicplayer.strawberry) &
 (sleep 7 && dropbox start) &
