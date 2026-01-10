@@ -100,7 +100,7 @@ def get_widgets():
         widget.Volume(
             fmt="{}",
             emoji=True,
-            emoji_list=["", "", "", ""],
+            emoji_list=["🔇", "🔈", "🔉", "🔊"],
             padding=5,
             foreground=colors["warning"],
             **powerline,
