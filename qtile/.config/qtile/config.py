@@ -6,6 +6,13 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+# Adiciona caminho do pipx/binários locais ao PATH do Qtile
+home = os.path.expanduser("~")
+local_bin = os.path.join(home, ".local", "bin")
+
+if local_bin not in os.environ["PATH"]:
+    os.environ["PATH"] = local_bin + os.pathsep + os.environ["PATH"]
+
 # qtile-extras import
 try:
     import qtile_extras.widget as qe_widget
