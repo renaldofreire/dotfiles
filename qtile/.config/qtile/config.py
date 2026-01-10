@@ -290,24 +290,19 @@ screens = [
                     padding=3,
                     foreground=colors["primary"],
                 ),
-                widget.PulseVolume(
-                    channel="Master",
+                widget.Volume(
                     fmt="{}",
                     emoji=True,
-                    emoji_list=["🔇", "", "", ""],
-                    volume_app="pavucontrol",
-                    limit_max_volume=False,
+                    emoji_list=["🔇", "🔈", "🔉", "🔊"],
                     padding=5,
                     foreground=colors["warning"],
+                    mouse_callbacks={"Button3": lazy.spawn("pavucontrol")},
                     **powerline if QTILE_EXTRAS_AVAILABLE else {},
                 ),
-                # volume: percentage
-                widget.PulseVolume(
-                    channel="Master",
+                widget.Volume(
                     fmt="{}",
                     padding=2,
                     foreground=colors["warning"],
-                    limit_max_volume=False,
                 ),
                 widget.Sep(
                     linewidth=1,
