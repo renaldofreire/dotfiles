@@ -19,7 +19,7 @@ groups = [
         matches=[
             Match(
                 wm_class=re.compile(
-                    r"^(signal|telegram-desktop|discord|FFPWA-01JWMJBS7S1ZP3J868TGA3AM0G)$"
+                    r"^(signal|Telegram|discord|FFPWA-01JWMJBS7S1ZP3J868TGA3AM0G)$"
                 )
             )
         ],
