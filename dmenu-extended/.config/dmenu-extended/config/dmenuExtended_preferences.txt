@@ -48,6 +48,10 @@
             "Cryptomator-flatpak",
             "org.cryptomator.Cryptomator"
         ],
+        [
+            "Stremio-flatpak",
+            "com.stremio.Stremio"
+        ],
         "mullvad-vpn"
     ],
     "indicator_alias": "",
