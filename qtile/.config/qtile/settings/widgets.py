@@ -76,10 +76,18 @@ def get_widgets(primary=True):
             name_transform=lambda name: name.upper(),
         ),
         widget.Spacer(),
+        widget.CPU(
+            format="󰻠 {load_percent}%",
+            foreground=colors["secondary"],
+            update_interval=2.0,
+            **rounded_rect,
+        ),
         widget.CPUGraph(
             graph_color=colors["secondary"],
             fill_color=colors["secondary"],
             border_width=0,
+            line_width=1.5,
+            frequency=2,
             background=colors["background"],
             **rounded_rect,
         ),
