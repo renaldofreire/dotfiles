@@ -3,8 +3,8 @@ Color Schemes for Qtile
 Modular theme management
 """
 
-# Theme Selector: "raven_blue", "catppuccin_mocha", "everforest", "dracula", "nord"
-CURRENT_THEME = "catppuccin_mocha"
+# Theme Selector: "raven_blue", "catppuccin_mocha", "everforest", "dracula", "nord", "monochrome_slate"
+CURRENT_THEME = "monochrome_slate"
 
 # Raven Blue (Original setup)
 raven_blue = {
@@ -91,6 +91,23 @@ nord = {
     "error": "#BF616A",
 }
 
+# Monochrome Slate (Sober & Minimalist)
+monochrome_slate = {
+    "background": "#0f111a",
+    "foreground": "#d1d5db",
+    "primary": "#374151",
+    "secondary": "#4b5563",
+    "accent": "#9ca3af",
+    "urgent": "#ef4444",
+    "inactive": "#374151",
+    "selection": "#1f2937",
+    "border_active": "#9ca3af",
+    "border_inactive": "#1f2937",
+    "success": "#d1d5db",
+    "warning": "#9ca3af",
+    "error": "#ef4444",
+}
+
 # Theme Map
 themes = {
     "raven_blue": raven_blue,
@@ -98,6 +115,7 @@ themes = {
     "everforest": everforest,
     "dracula": dracula,
     "nord": nord,
+    "monochrome_slate": monochrome_slate,
 }
 
 # Load the current theme, fallback to raven_blue
