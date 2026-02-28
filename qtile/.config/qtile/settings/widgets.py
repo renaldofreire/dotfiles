@@ -77,11 +77,11 @@ def get_widgets(primary=True):
         ),
         widget.Spacer(),
         widget.CPUGraph(
-            type="box",
             graph_color=colors["secondary"],
             fill_color=colors["secondary"],
-            border_color=colors["primary"],
+            border_width=0,
             background=colors["background"],
+            **rounded_rect,
         ),
         widget.Sep(linewidth=1, padding=5, foreground=colors["primary"]),
         widget.Memory(
