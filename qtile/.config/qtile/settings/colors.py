@@ -1,12 +1,13 @@
 """
 Color Schemes for Qtile
+Modular theme management
 """
 
-# Tema atual - troque aqui para mudar o tema
-CURRENT_THEME = "custom"
+# Theme Selector: "raven_blue", "catppuccin_mocha", "everforest", "dracula", "nord"
+CURRENT_THEME = "catppuccin_mocha"
 
-# Seus cores atuais (Raven Black + Blue)
-custom = {
+# Raven Blue (Original setup)
+raven_blue = {
     "background": "#050301",
     "foreground": "#FDF5AA",
     "primary": "#34699A",
@@ -22,7 +23,41 @@ custom = {
     "error": "#FF6B6B",
 }
 
-# Tema Dracula
+# Catppuccin Mocha (Modern & Soft)
+catppuccin_mocha = {
+    "background": "#1e1e2e",
+    "foreground": "#cdd6f4",
+    "primary": "#89b4fa",
+    "secondary": "#f5c2e7",
+    "accent": "#fab387",
+    "urgent": "#f38ba8",
+    "inactive": "#585b70",
+    "selection": "#313244",
+    "border_active": "#89b4fa",
+    "border_inactive": "#313244",
+    "success": "#a6e3a1",
+    "warning": "#f9e2af",
+    "error": "#f38ba8",
+}
+
+# Everforest Dark (Relaxing Green)
+everforest = {
+    "background": "#2d353b",
+    "foreground": "#d3c6aa",
+    "primary": "#a7c080",
+    "secondary": "#7fbbb3",
+    "accent": "#dbbc7f",
+    "urgent": "#e67e80",
+    "inactive": "#859289",
+    "selection": "#3d484d",
+    "border_active": "#a7c080",
+    "border_inactive": "#3d484d",
+    "success": "#a7c080",
+    "warning": "#dbbc7f",
+    "error": "#e67e80",
+}
+
+# Dracula Theme
 dracula = {
     "background": "#282a36",
     "foreground": "#f8f8f2",
@@ -39,7 +74,7 @@ dracula = {
     "error": "#ff5555",
 }
 
-# Tema Nord
+# Nord Theme
 nord = {
     "background": "#2E3440",
     "foreground": "#D8DEE9",
@@ -56,11 +91,14 @@ nord = {
     "error": "#BF616A",
 }
 
-# Seleciona o tema
+# Theme Map
 themes = {
-    "custom": custom,
+    "raven_blue": raven_blue,
+    "catppuccin_mocha": catppuccin_mocha,
+    "everforest": everforest,
     "dracula": dracula,
     "nord": nord,
 }
 
-colors = themes.get(CURRENT_THEME, custom)
+# Load the current theme, fallback to raven_blue
+colors = themes.get(CURRENT_THEME, raven_blue)
