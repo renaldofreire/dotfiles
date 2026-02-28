@@ -96,7 +96,7 @@ monochrome_slate = {
     "background": "#0f111a",
     "foreground": "#d1d5db",
     "primary": "#374151",
-    "secondary": "#4b5563",
+    "secondary": "#717b88",
     "accent": "#9ca3af",
     "urgent": "#ef4444",
     "inactive": "#374151",
