@@ -95,20 +95,20 @@ def get_widgets(primary=True):
         widget.Memory(
             format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}",
             measure_mem="G",
-            foreground=colors["success"],
+            foreground=colors["secondary"],
             **powerline,
         ),
         widget.Sep(linewidth=1, padding=5, foreground=colors["primary"]),
         widget.Clock(
             format=" %a, %d/%m - %H:%M",
-            foreground=colors["accent"],
+            foreground=colors["foreground"],
             **rounded_rect,
         ),
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
         widget.Volume(
             fmt="󰕾 {}",
             padding=5,
-            foreground=colors["warning"],
+            foreground=colors["accent"],
             **powerline,
         ),
         widget.Sep(linewidth=1, padding=7, foreground=colors["primary"]),
