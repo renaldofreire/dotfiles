@@ -11,21 +11,21 @@ killall -q picom light-locker nm-applet caffeine
 sleep 1
 
 # Inicia os serviços de sistema primeiro
-picom &
-sxhkd &
-light-locker --lock-after-screensaver=10 --lock-on-suspend &
+pgrep -x picom > /dev/null || picom &
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x light-locker > /dev/null || light-locker --lock-after-screensaver=10 --lock-on-suspend &
 nitrogen --restore &
 
 # Inicia o portal XDG antes do StatusNotifier
-/usr/lib/xdg-desktop-portal-gtk &
+pgrep -x xdg-desktop-portal-gtk > /dev/null || /usr/lib/xdg-desktop-portal-gtk &
 sleep 1
 
 # Network Manager com configurações específicas para StatusNotifier
-/usr/bin/nm-applet --sm-disable --indicator &
-# nm-applet --indicator &
+pgrep -x nm-applet > /dev/null || /usr/bin/nm-applet --sm-disable --indicator &
 
 # Outros serviços
-caffeine &
+pgrep -x caffeine > /dev/null || caffeine &
+
 #easyeffects &
 
 # Configurações instantâneas (não precisam de '&')
