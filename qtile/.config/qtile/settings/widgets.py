@@ -47,7 +47,7 @@ rounded_rect = (
 )
 
 
-def get_widgets():
+def get_widgets(primary=True):
     """Retorna lista de widgets para a barra"""
     widgets = [
         widget.TextBox(
@@ -98,39 +98,33 @@ def get_widgets():
         ),
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
         widget.Volume(
-            fmt="{}",
-            emoji=True,
-            emoji_list=["🔇", "🔈", "🔉", "🔊"],
+            fmt="󰕾 {}",
             padding=5,
             foreground=colors["warning"],
             **powerline,
         ),
-        widget.Volume(
-            fmt="{}",
-            padding=2,
-            foreground=colors["warning"],
-        ),
         widget.Sep(linewidth=1, padding=7, foreground=colors["primary"]),
     ]
 
-    # Adiciona StatusNotifier
-    if QTILE_EXTRAS_AVAILABLE:
-        widgets.append(
-            qe_widget.StatusNotifier(
-                icon_theme="Papirus-Dark",
-                icon_size=16,
-                padding=5,
-                background=colors["background"],
+    # Adiciona StatusNotifier apenas na tela principal
+    if primary:
+        if QTILE_EXTRAS_AVAILABLE:
+            widgets.append(
+                qe_widget.StatusNotifier(
+                    icon_theme="Papirus-Dark",
+                    icon_size=16,
+                    padding=5,
+                    background=colors["background"],
+                )
             )
-        )
-    else:
-        widgets.append(
-            widget.StatusNotifier(
-                icon_theme="Papirus-Dark",
-                icon_size=16,
-                padding=5,
-                background=colors["background"],
+        else:
+            widgets.append(
+                widget.StatusNotifier(
+                    icon_theme="Papirus-Dark",
+                    icon_size=16,
+                    padding=5,
+                    background=colors["background"],
+                )
             )
-        )
 
     return widgets
