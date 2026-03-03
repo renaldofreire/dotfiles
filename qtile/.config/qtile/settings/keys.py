@@ -2,12 +2,15 @@
 Keybindings Configuration
 """
 
+import os
 from libqtile.config import Key
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
+config_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+rofi_command = f"rofi -show {{mode}} -theme {config_dir}/themes/rofi/monochrome_slate.rasi"
 
 keys = [
     # Window Management
@@ -44,7 +47,12 @@ keys = [
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "Space", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "Tab", lazy.spawn("rofi -show window"), desc="Switch between windows"),
+    Key(
+        [mod],
+        "Tab",
+        lazy.spawn(rofi_command.format(mode="window")),
+        desc="Switch between windows",
+    ),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -62,8 +70,18 @@ keys = [
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
     ),
     # Launchers
-    Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Run rofi apps"),
-    Key([mod], "p", lazy.spawn("rofi -show run"), desc="Run rofi commands"),
+    Key(
+        [mod],
+        "d",
+        lazy.spawn(rofi_command.format(mode="drun")),
+        desc="Run rofi apps",
+    ),
+    Key(
+        [mod],
+        "p",
+        lazy.spawn(rofi_command.format(mode="run")),
+        desc="Run rofi commands",
+    ),
     # Window controls
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod, "shift"], "Space", lazy.window.toggle_floating(), desc="Toggle floating"),
