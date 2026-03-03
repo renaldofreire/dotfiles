@@ -9,8 +9,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
-config_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-rofi_command = f"rofi -show {{mode}} -theme {config_dir}/themes/rofi/monochrome_slate.rasi"
+rofi_command = "rofi -show {mode}"
 
 keys = [
     # Window Management
