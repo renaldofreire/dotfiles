@@ -44,7 +44,8 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "Tab", lazy.spawn("rofi -show window"), desc="Switch between windows"),
+    Key([mod, "shift"], "m", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -62,7 +63,8 @@ keys = [
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
     ),
     # Launchers
-    Key([mod], "m", lazy.spawn("dmenu_extended_run"), desc="Run dmenu"),
+    Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Run rofi apps"),
+    Key([mod], "p", lazy.spawn("rofi -show run"), desc="Run rofi commands"),
     # Window controls
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod], "Escape", lazy.window.toggle_floating(), desc="Toggle floating"),
