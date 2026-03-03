@@ -15,7 +15,6 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows
     Key(
         [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
@@ -44,11 +43,11 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Space", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "Tab", lazy.spawn("rofi -show window"), desc="Switch between windows"),
-    Key([mod, "shift"], "m", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Audio - PipeWire/PulseAudio
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
@@ -63,9 +62,9 @@ keys = [
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
     ),
     # Launchers
-    Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Run rofi apps"),
+    Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Run rofi apps"),
     Key([mod], "p", lazy.spawn("rofi -show run"), desc="Run rofi commands"),
     # Window controls
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
-    Key([mod], "Escape", lazy.window.toggle_floating(), desc="Toggle floating"),
+    Key([mod, "shift"], "Space", lazy.window.toggle_floating(), desc="Toggle floating"),
 ]
