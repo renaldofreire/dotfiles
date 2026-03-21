@@ -16,7 +16,7 @@ groups = [
     Group("6"),
     Group(
         "7",
-        matches=[Match(wm_class=re.compile(r"^(signal|Telegram|discord|Franz)$"))],
+        matches=[Match(wm_class=re.compile(r"^(signal|Telegram|discord|ferdium)$"))],
     ),
     Group("8"),
     Group(
