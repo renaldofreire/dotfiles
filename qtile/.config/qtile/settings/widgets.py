@@ -107,6 +107,9 @@ def get_widgets(primary=True):
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
         widget.Volume(
             fmt="󰕾 {}",
+            get_volume_command="pactl get-sink-volume @DEFAULT_SINK@",
+            check_mute_command="pactl get-sink-mute @DEFAULT_SINK@",
+            check_mute_string="Mute: yes",
             padding=5,
             foreground=colors["accent"],
             **powerline,
