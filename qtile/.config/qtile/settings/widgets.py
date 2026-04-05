@@ -113,6 +113,7 @@ def get_widgets(primary=True):
             mute_command="pactl set-sink-mute @DEFAULT_SINK@ toggle",
             volume_up_command="pactl set-sink-volume @DEFAULT_SINK@ +5%",
             volume_down_command="pactl set-sink-volume @DEFAULT_SINK@ -5%",
+            limit_max_volume=False,
             padding=5,
             foreground=colors["accent"],
             **powerline,
