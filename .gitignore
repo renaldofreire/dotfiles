@@ -1,2 +1,19 @@
-/qtile/__pycache__/
-/dmenu-extended/.config/dmenu-extended/plugins/__pycache__/
+# Python cache
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS/System
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.backup
+*~
