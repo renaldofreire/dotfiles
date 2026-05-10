@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-THEME_DIR="$HOME/.config/alacritty/themes/themes"
-CURRENT_THEME="$HOME/.config/alacritty/current-theme.toml"
+# Entrar no diretório para fazer o link relativo
+cd "$HOME/.config/alacritty/"
+
+THEME_DIR="themes/themes"
+CURRENT_THEME="current-theme.toml"
 
 LIGHT_THEME="$THEME_DIR/catppuccin_latte.toml"
 DARK_THEME="$THEME_DIR/catppuccin_mocha.toml"
