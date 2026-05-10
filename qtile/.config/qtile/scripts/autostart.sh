@@ -1,4 +1,5 @@
 #!/bin/sh
+~/.config/alacritty/scripts/theme_switcher.sh &
 
 # 1. Variáveis de Ambiente e Autenticação
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
