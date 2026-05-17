@@ -6,23 +6,10 @@ THEME_DIR="$ALACRITTY_DIR/themes/themes"
 CURRENT_THEME_LINK="$ALACRITTY_DIR/current-theme.toml"
 CONFIG_FILE="$ALACRITTY_DIR/alacritty.toml"
 
-# 2. DEFINIÇÕES DE CORES PARA SINCRONIZAÇÃO TMUX
-# Gruvbox Colors
-GRUV_LIGHT_FG="#3c3836"
-GRUV_LIGHT_ACCENT="#af3a03"
-GRUV_DARK_FG="#ebdbb2"
-GRUV_DARK_ACCENT="#fabd2f"
-
-# Catppuccin Colors
-LATTE_FG="#4c4f69"
-LATTE_ACCENT="#ea76cb"
-MOCHA_FG="#cdd6f4"
-MOCHA_ACCENT="#89b4fa"
-
-# 3. DETERMINAÇÃO DO MODO
+# 2. DETERMINAÇÃO DO MODO
 MODE=$1
 
-# Se não passar argumento, tenta determinar pelo horário (Padrão Set 1 - Gruvbox)
+# Se não passar argumento, determina pelo horário
 if [ -z "$MODE" ]; then
     HOUR=$(date +%-H)
     if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 17 ]; then
@@ -35,31 +22,19 @@ fi
 case $MODE in
     "day1")
         ALACRITTY_THEME="$THEME_DIR/gruvbox_light.toml"
-        TMUX_FLAVOR="latte" # Usamos latte como base para temas claros no tmux
         NVIM_THEME="gruvbox_light"
-        FG_COLOR=$GRUV_LIGHT_FG
-        ACCENT=$GRUV_LIGHT_ACCENT
         ;;
     "night1")
         ALACRITTY_THEME="$THEME_DIR/gruvbox_material_hard_dark.toml"
-        TMUX_FLAVOR="mocha" # Usamos mocha como base para temas escuros no tmux
         NVIM_THEME="gruvbox_dark"
-        FG_COLOR=$GRUV_DARK_FG
-        ACCENT=$GRUV_DARK_ACCENT
         ;;
     "day2")
         ALACRITTY_THEME="$THEME_DIR/catppuccin_latte.toml"
-        TMUX_FLAVOR="latte"
         NVIM_THEME="latte"
-        FG_COLOR=$LATTE_FG
-        ACCENT=$LATTE_ACCENT
         ;;
     "night2")
         ALACRITTY_THEME="$THEME_DIR/catppuccin_mocha.toml"
-        TMUX_FLAVOR="mocha"
         NVIM_THEME="mocha"
-        FG_COLOR=$MOCHA_FG
-        ACCENT=$MOCHA_ACCENT
         ;;
     *)
         echo "Uso: theme_switcher.sh [day1|night1|day2|night2]"
@@ -69,7 +44,7 @@ esac
 
 echo "--- Sincronizando Sistema ($MODE) ---"
 
-# 4. ATUALIZAR ALACRITTY
+# 3. ATUALIZAR ALACRITTY
 if [ -f "$ALACRITTY_THEME" ]; then
     rm -f "$CURRENT_THEME_LINK"
     ln -s "$ALACRITTY_THEME" "$CURRENT_THEME_LINK"
@@ -79,16 +54,15 @@ else
     echo "[!] Erro: Arquivo de tema não encontrado: $ALACRITTY_THEME"
 fi
 
-# 5. ATUALIZAR TMUX
+# 4. ATUALIZAR TMUX (Modo Neutro)
 if [ -n "$TMUX" ]; then
     tmux refresh-client -S
     echo "[✓] Tmux: Sincronizado"
 fi
 
-# 6. ATUALIZAR NEOVIM
-# Envia comando para instâncias ativas
+# 5. ATUALIZAR NEOVIM
 if command -v nvim > /dev/null; then
-    # Mapeamento para o comando interno do nvim (Day1 -> gruvbox_light, etc)
+    # Envia comando via RPC pipe
     nvim --server /tmp/nvim.pipe --remote-send ":Theme $NVIM_THEME<CR>" 2>/dev/null
     echo "[✓] Neovim: Comando de troca enviado ($NVIM_THEME)"
 fi
