@@ -1,3 +1,15 @@
+# --- OH MY ZSH CONFIGURATION ---
+export ZSH="$HOME/.oh-my-zsh"
+
+# Definindo o tema minimalista solicitado
+ZSH_THEME="lambda"
+
+# Plugins recomendados para seu setup
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+# Carrega o Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
 # --- CONFIGURAÇÕES GERAIS ---
 # Remove duplicatas do PATH e define caminhos essenciais
 typeset -U path
@@ -14,7 +26,6 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
 # --- SINCRONIZAÇÃO DE TEMAS UNIFICADA ---
-# Seus atalhos originais mantidos
 alias day1='$HOME/.config/alacritty/scripts/theme_switcher.sh day1'
 alias night1='$HOME/.config/alacritty/scripts/theme_switcher.sh night1'
 alias day2='$HOME/.config/alacritty/scripts/theme_switcher.sh day2'
@@ -31,12 +42,3 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias ..='cd ..'
 alias g='git'
-
-# --- INTERFACE E COMPLETAMENTO ---
-# Prompt minimalista: usuario@maquina pasta %
-PROMPT='%F{blue}%n%f@%F{green}%m%f %F{cyan}%~%f %# '
-
-# Habilita completamento inteligente
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive
