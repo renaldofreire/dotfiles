@@ -59,7 +59,7 @@ Seu tmux está configurado para salvar sessões automaticamente e restaurá-las 
 
 Sua configuração atual é considerada **de alto nível (Power User)** por três motivos:
 
-1.  **Consistência Visual**: A barra de status transparente integrada ao Alacritty e o tema Catppuccin Mocha criam uma identidade visual coesa.
+1.  **Neutralidade Visual**: A barra de status é 100% transparente e utiliza cores padrão, adaptando-se instantaneamente a qualquer tema do Alacritty.
 2.  **Eficiência de Entrada**: O uso do Prefix `Ctrl+A` e a redução do `escape-time` para `0` tornam o ambiente perfeito para quem usa Vim/Neovim.
 3.  **Abstração de Fricção**: A navegação com `Alt` elimina milhares de toques extras no teclado ao longo do dia, permitindo focar apenas no código.
 

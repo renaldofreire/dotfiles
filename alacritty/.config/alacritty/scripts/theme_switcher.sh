@@ -81,22 +81,8 @@ fi
 
 # 5. ATUALIZAR TMUX
 if [ -n "$TMUX" ]; then
-    tmux set-option -g @catppuccin_flavor "$TMUX_FLAVOR"
-    tmux set-option -g status-style "bg=default,fg=$FG_COLOR"
-    
-    # Diferenciação visual para modo claro/escuro
-    if [[ "$MODE" == *"day"* ]]; then
-        tmux set-window-option -g window-status-current-format "#[fg=$ACCENT,bold,reverse] #W #[default]"
-    else
-        tmux set-window-option -g window-status-current-format "#[fg=$ACCENT,bold,reverse] #W #[default]"
-    fi
-    tmux set-window-option -g window-status-format "#[fg=$FG_COLOR,dim] #W "
-    
-    PLUGIN_PATH=$(find ~/.config/tmux/plugins ~/.tmux/plugins -name "catppuccin.tmux" 2>/dev/null | head -n 1)
-    if [ -n "$PLUGIN_PATH" ]; then tmux run-shell "$PLUGIN_PATH"; fi
-    
     tmux refresh-client -S
-    echo "[✓] Tmux: Sincronizado ($TMUX_FLAVOR)"
+    echo "[✓] Tmux: Sincronizado"
 fi
 
 # 6. ATUALIZAR NEOVIM
