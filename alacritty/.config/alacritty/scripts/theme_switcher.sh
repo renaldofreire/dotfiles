@@ -46,9 +46,11 @@ echo "--- Sincronizando Sistema ($MODE) ---"
 
 # 3. ATUALIZAR ALACRITTY
 if [ -f "$ALACRITTY_THEME" ]; then
-    rm -f "$CURRENT_THEME_LINK"
-    ln -s "$ALACRITTY_THEME" "$CURRENT_THEME_LINK"
-    touch "$CONFIG_FILE"
+    # Verifica se o link já aponta para o tema correto para evitar overhead
+    if [ "$(readlink "$CURRENT_THEME_LINK")" != "$ALACRITTY_THEME" ]; then
+        ln -sf "$ALACRITTY_THEME" "$CURRENT_THEME_LINK"
+        touch "$CONFIG_FILE"
+    fi
     echo "[✓] Alacritty: $(basename "$ALACRITTY_THEME")"
 else
     echo "[!] Erro: Arquivo de tema não encontrado: $ALACRITTY_THEME"
