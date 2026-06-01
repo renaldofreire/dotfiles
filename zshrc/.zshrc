@@ -1,8 +1,9 @@
 # --- OH MY ZSH CONFIGURATION ---
 export ZSH="$HOME/.oh-my-zsh"
 
-# Definindo o tema minimalista solicitado
-ZSH_THEME="lambda"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="bira"
+# ZSH_THEME="af-magic"
 
 # Plugins recomendados para seu setup
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
