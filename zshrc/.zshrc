@@ -6,7 +6,11 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="af-magic"
 
 # Plugins recomendados para seu setup
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git 
+         zsh-autosuggestions 
+         zsh-syntax-highlighting
+         web-search
+     )
 
 # Carrega o Oh My Zsh
 source $ZSH/oh-my-zsh.sh
@@ -53,6 +57,16 @@ alias mux='tmuxinator'
 alias fetch='fastfetch'
 alias ports='sudo netstat -tulpn'
 alias sync-calibre='rsync -av --delete "/home/ref/calibre-local/" "/mnt/calibre-library/"'
+
+# EXA
+# ls -> exa
+alias ls='exa --color=always --group-directories-first'
+alias ll='exa -lh --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'
+alias lla='exa -lah --color=always --group-directories-first'
+
+# tree using exa
+alias tree='exa --tree'
 
 # Navegação (Goto)
 alias cddown='cd ~/Downloads/'
