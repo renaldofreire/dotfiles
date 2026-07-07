@@ -52,6 +52,7 @@ alias notes='v /home/renaldo/Dropbox/Apps/Notes/notebook.md'
 alias mux='tmuxinator'
 alias fetch='fastfetch'
 alias ports='sudo netstat -tulpn'
+alias sync-calibre='rsync -av --delete "/home/ref/calibre-local/" "/mnt/calibre-library/"'
 
 # Navegação (Goto)
 alias cddown='cd ~/Downloads/'
