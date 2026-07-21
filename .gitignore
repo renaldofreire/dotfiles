@@ -17,3 +17,7 @@ Thumbs.db
 *.bak
 *.backup
 *~
+
+# Alacritty dynamic theme symlink
+alacritty/.config/alacritty/current-theme.toml
+
