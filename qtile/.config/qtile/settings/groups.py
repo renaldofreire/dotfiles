@@ -8,21 +8,21 @@ from libqtile.lazy import lazy
 from .keys import mod, keys
 
 groups = [
-    Group("1", matches=[Match(wm_class="Navigator")]),
+    Group("1", matches=[Match(wm_class="Navigator"), Match(wm_class="zen")]),
     Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
-    Group("3", matches=[Match(wm_class="joplin")]),
+    Group("3", matches=[Match(wm_class="Joplin"), Match(wm_class="joplin")]),
     Group("4"),
     Group("5"),
     Group("6"),
     Group(
         "7",
-        matches=[Match(wm_class=re.compile(r"^(signal|Telegram|discord|ferdium)$"))],
+        matches=[Match(wm_class=re.compile(r"^(signal|Telegram|TelegramDesktop|discord|[fF]erdium)$"))],
     ),
     Group("8"),
     Group(
         "9",
         matches=[
-            Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|easyeffects)$"))
+            Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|org\.strawberrymusicplayer\.strawberry|easyeffects)$"))
         ],
     ),
     Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
