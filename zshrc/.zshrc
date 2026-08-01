@@ -150,3 +150,8 @@ write_blog() {
 
     echo "✨ Texto gerado com sucesso e 100% limpo em $3!"
 }
+
+# 9router
+export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
+export ANTHROPIC_API_KEY="9router"
+
