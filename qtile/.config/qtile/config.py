@@ -3,13 +3,6 @@ Qtile Configuration
 Modular setup for better maintainability
 """
 
-import os
-import sys
-
-# Adiciona o diretório de configuração ao PATH
-config_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, config_dir)
-
 from settings.keys import keys, mod
 from settings.groups import groups
 from settings.layouts import layouts, floating_layout

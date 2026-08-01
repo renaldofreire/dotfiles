@@ -120,3 +120,25 @@ themes = {
 
 # Load the current theme, fallback to raven_blue
 colors = themes.get(CURRENT_THEME, raven_blue)
+
+
+def set_theme(name: str) -> dict:
+    """Dynamically switch theme at runtime."""
+    global colors, CURRENT_THEME
+    if name in themes:
+        CURRENT_THEME = name
+        colors = themes[name]
+    return colors
+
+
+def cycle_theme() -> dict:
+    """Cycle to the next available theme."""
+    theme_names = list(themes.keys())
+    current_idx = theme_names.index(CURRENT_THEME) if CURRENT_THEME in theme_names else 0
+    next_idx = (current_idx + 1) % len(theme_names)
+    return set_theme(theme_names[next_idx])
+
+
+def get_available_themes() -> list:
+    """Return list of available theme names."""
+    return list(themes.keys())

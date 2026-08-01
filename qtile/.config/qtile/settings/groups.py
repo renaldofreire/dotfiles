@@ -7,6 +7,11 @@ from libqtile.config import Group, Match, Key
 from libqtile.lazy import lazy
 from .keys import mod, keys
 
+# Pre-compiled regex patterns for window matching
+TELEGRAM_RE = re.compile(r"^(signal|Telegram|TelegramDesktop|discord|[fF]erdium)$", re.IGNORECASE)
+MEDIA_RE = re.compile(r"^(pocket-casts-linux|strawberry|org\.strawberrymusicplayer\.strawberry|easyeffects)$")
+MAIL_RE = re.compile(r"^(Mail|thunderbird)$")
+
 groups = [
     Group("1", matches=[Match(wm_class="Navigator"), Match(wm_class="zen")]),
     Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
@@ -14,18 +19,10 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group(
-        "7",
-        matches=[Match(wm_class=re.compile(r"^(signal|Telegram|TelegramDesktop|discord|[fF]erdium)$"))],
-    ),
+    Group("7", matches=[Match(wm_class=TELEGRAM_RE)]),
     Group("8"),
-    Group(
-        "9",
-        matches=[
-            Match(wm_class=re.compile(r"^(pocket-casts-linux|strawberry|org\.strawberrymusicplayer\.strawberry|easyeffects)$"))
-        ],
-    ),
-    Group("0", matches=[Match(wm_class=re.compile(r"^(Mail|thunderbird)$"))]),
+    Group("9", matches=[Match(wm_class=MEDIA_RE)]),
+    Group("0", matches=[Match(wm_class=MAIL_RE)]),
 ]
 
 # Adiciona keybindings para grupos

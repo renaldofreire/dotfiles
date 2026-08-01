@@ -24,15 +24,15 @@ widget_defaults = dict(
 
 extension_defaults = widget_defaults.copy()
 
-# Decorações
-powerline = (
-    {"decorations": [PowerLineDecoration(path="arrow_right")]}
-    if QTILE_EXTRAS_AVAILABLE
-    else {}
-)
-rounded_rect = (
-    {
-        "decorations": [
+# Decoration factory
+def decoration(style: str) -> dict:
+    """Return decoration dict for given style."""
+    if not QTILE_EXTRAS_AVAILABLE:
+        return {}
+    
+    decorations = {
+        "powerline": [PowerLineDecoration(path="arrow_right")],
+        "rounded": [
             RectDecoration(
                 colour=colors["selection"],
                 radius=9,
@@ -40,11 +40,9 @@ rounded_rect = (
                 padding_y=2,
                 group=True,
             )
-        ]
+        ],
     }
-    if QTILE_EXTRAS_AVAILABLE
-    else {}
-)
+    return {"decorations": decorations.get(style, [])}
 
 
 def get_widgets(primary=True):
@@ -64,10 +62,10 @@ def get_widgets(primary=True):
             this_current_screen_border=colors["secondary"],
             urgent_border=colors["urgent"],
             block_highlight_text_color=colors["background"],
-            **rounded_rect,
+            **decoration("rounded"),
         ),
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
-        widget.CurrentLayout(foreground=colors["accent"], **powerline),
+        widget.CurrentLayout(foreground=colors["accent"], **decoration("powerline")),
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
         widget.Prompt(foreground=colors["accent"], cursor_color=colors["secondary"]),
         widget.WindowName(foreground=colors["foreground"], max_chars=50),
@@ -80,7 +78,7 @@ def get_widgets(primary=True):
             format="󰻠 {load_percent}%",
             foreground=colors["secondary"],
             update_interval=2.0,
-            **rounded_rect,
+            **decoration("rounded"),
         ),
         widget.CPUGraph(
             graph_color=colors["secondary"],
@@ -89,20 +87,20 @@ def get_widgets(primary=True):
             line_width=1.5,
             frequency=2,
             background=colors["background"],
-            **rounded_rect,
+            **decoration("rounded"),
         ),
         widget.Sep(linewidth=1, padding=5, foreground=colors["primary"]),
         widget.Memory(
             format="󰍛 {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}",
             measure_mem="G",
             foreground=colors["secondary"],
-            **powerline,
+            **decoration("powerline"),
         ),
         widget.Sep(linewidth=1, padding=5, foreground=colors["primary"]),
         widget.Clock(
             format=" %a, %d/%m - %H:%M",
             foreground=colors["foreground"],
-            **rounded_rect,
+            **decoration("rounded"),
         ),
         widget.Sep(linewidth=1, padding=3, foreground=colors["primary"]),
         widget.Volume(
@@ -116,7 +114,7 @@ def get_widgets(primary=True):
             limit_max_volume=False,
             padding=5,
             foreground=colors["accent"],
-            **powerline,
+            **decoration("powerline"),
         ),
         widget.Sep(linewidth=1, padding=7, foreground=colors["primary"]),
     ]

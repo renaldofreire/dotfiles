@@ -1,45 +1,50 @@
 #!/bin/sh
+set -euo pipefail
+
+# Theme switcher for Alacritty
 ~/.config/alacritty/scripts/theme_switcher.sh &
 
-# 1. Variáveis de Ambiente e Autenticação
+# 1. Environment Variables and Authentication
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-# 2. Configurações do Sistema e Serviços de Fundo (daemons)
-killall -q picom light-locker nm-applet caffeine
+# 2. System Services and Background Daemons
+# Kill existing instances cleanly
+for cmd in picom light-locker nm-applet caffeine; do
+    pkill -x "$cmd" 2>/dev/null || true
+done
 
-# Aguarda um momento para garantir que os processos foram terminados
+# Wait for processes to terminate
 sleep 1
 
-# Inicia os serviços de sistema primeiro
+# Start system services
 pgrep -x picom > /dev/null || picom &
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x light-locker > /dev/null || light-locker --lock-after-screensaver=10 --lock-on-suspend &
 nitrogen --restore &
 
-# Inicia o portal XDG antes do StatusNotifier
+# Start XDG desktop portal before StatusNotifier
 pgrep -x xdg-desktop-portal-gtk > /dev/null || /usr/lib/xdg-desktop-portal-gtk &
 sleep 1
 
-# Network Manager com configurações específicas para StatusNotifier
+# Network Manager with StatusNotifier support
 pgrep -x nm-applet > /dev/null || /usr/bin/nm-applet --sm-disable --indicator &
 
-# Outros serviços
+# Other services
 pgrep -x caffeine > /dev/null || caffeine &
 
-#easyeffects &
+# easyeffects &
 
-# Configurações instantâneas (não precisam de '&')
+# 3. Instant Settings (don't background)
 xset r rate 300 50
 xset s 600
 
-# Aguarda os serviços de sistema estarem prontos
+# Wait for system services to be ready
 sleep 2
 
-# 3. Aplicações do Usuário (com atrasos para não sobrecarregar)
+# 4. User Applications (staggered startup)
 (sleep 3 && alacritty) &
 (sleep 4 && zen-browser) &
 (sleep 5 && net.cozic.joplin_desktop) &
 (sleep 6 && strawberry) &
 (sleep 7 && dropbox start) &
-
