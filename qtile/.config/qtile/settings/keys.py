@@ -84,4 +84,11 @@ keys = [
     # Window controls
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod, "shift"], "Space", lazy.window.toggle_floating(), desc="Toggle floating"),
+    
+    # Custom apps migrating from sxhkd
+    Key(["control", mod], "w", lazy.spawn("zen-browser"), desc="Launch Zen Browser"),
+    Key(["control", mod], "f", lazy.spawn("alacritty -e nnn"), desc="Launch nnn file manager"),
+    Key([], "Print", lazy.spawn("ksnip -r"), desc="Launch ksnip"),
+    Key(["shift"], "F11", lazy.spawn("alacritty -e redshift -O 4400"), desc="Redshift on"),
+    Key(["shift"], "F12", lazy.spawn("alacritty -e redshift -x"), desc="Redshift off"),
 ]

@@ -1,19 +1,5 @@
-# --- OH MY ZSH CONFIGURATION ---
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="bira"
-# ZSH_THEME="af-magic"
-
-# Plugins recomendados para seu setup
-plugins=(git 
-         zsh-autosuggestions 
-         zsh-syntax-highlighting
-         web-search
-     )
-
-# Carrega o Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+# --- STARSHIP E CONFIGURAÇÃO BÁSICA ZSH ---
+# Substitui o Oh My Zsh pelo Starship (mais rápido e escrito em Rust)
 
 # --- CONFIGURAÇÕES GERAIS ---
 # Remove duplicatas do PATH e define caminhos essenciais
@@ -29,6 +15,11 @@ setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
+
+# Habilita auto-completion nativo do zsh (já que removemos o Oh My Zsh)
+fpath=(/usr/share/zsh/site-functions $fpath)
+autoload -Uz compinit
+compinit
 
 # --- SINCRONIZAÇÃO DE TEMAS UNIFICADA ---
 alias day1='$HOME/.config/alacritty/scripts/theme_switcher.sh day1'
@@ -58,15 +49,15 @@ alias fetch='fastfetch'
 alias ports='sudo netstat -tulpn'
 alias sync-calibre='rsync -av --delete "/home/ref/calibre-local/" "/mnt/calibre-library/"'
 
-# EXA
-# ls -> exa
-alias ls='exa --color=always --group-directories-first'
-alias ll='exa -lh --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'
-alias lla='exa -lah --color=always --group-directories-first'
+# EZA (substituto moderno do exa)
+# ls -> eza
+alias ls='eza --color=always --group-directories-first'
+alias ll='eza -lh --color=always --group-directories-first'
+alias la='eza -a --color=always --group-directories-first'
+alias lla='eza -lah --color=always --group-directories-first'
 
-# tree using exa
-alias tree='exa --tree'
+# tree using eza
+alias tree='eza --tree'
 
 # Navegação (Goto)
 alias cddown='cd ~/Downloads/'
@@ -91,8 +82,7 @@ lazyg() {
 }
 
 # Utilitários de Sistema
-alias ls='ls --color=auto' # Mantido simples por padrão, use eza se preferir
-alias ll='ls -lah'
+# Mantido simples por padrão, use eza se preferir
 alias ..='cd ..'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -151,7 +141,33 @@ write_blog() {
     echo "✨ Texto gerado com sucesso e 100% limpo em $3!"
 }
 
-# 9router
-export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
-export ANTHROPIC_API_KEY="9router"
+# Claude in 9router
+alias claude-nemotron='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="nvidia-nemotro-3" claude'
+alias claude-gemini='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="claude-gemini-4free" claude'
+alias claude-gemini36='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="gemini-3-6flash" claude'
+
+# export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
+# export ANTHROPIC_API_KEY="9router"
+
+# Inicializa o Starship (mantenha isso no final do arquivo)
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
+
+# Carrega os plugins leves (Zsh-autosuggestions, Syntax-highlighting e Substring-search)
+# Certifique-se de instalá-los: sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
+
+# Configura atalhos das setas para Cima/Baixo usarem a busca inteligente por histórico
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+# Fallback para o modo de aplicação (comum no Tmux)
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
+# Fallbacks originais com terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up 2>/dev/null
+bindkey "$terminfo[kcud1]" history-substring-search-down 2>/dev/null
+
 
