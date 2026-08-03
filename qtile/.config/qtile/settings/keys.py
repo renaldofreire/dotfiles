@@ -36,7 +36,8 @@ keys = [
     ),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod], "n", lazy.spawn(os.path.expanduser("~/dotfiles/scripts/quick-notes.sh")), desc="Quick notes in Neovim"),
+    Key([mod, "shift"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # System
     Key(
         [mod, "shift"],
@@ -44,7 +45,7 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn("alacritty -e tmux new-session"), desc="Launch terminal with tmux session"),
     Key([mod], "Space", lazy.next_layout(), desc="Toggle between layouts"),
     Key(
         [mod],

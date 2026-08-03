@@ -27,6 +27,23 @@ def floating_dialogs(window):
         window.floating = True
 
 
+@hook.subscribe.client_managed
+def position_quick_notes(window):
+    """Posiciona a janela de anotações rápidas no topo centralizado em modo flutuante"""
+    wm_class = window.get_wm_class()
+    if wm_class and any(c in ("QuickNotes", "quick-notes") for c in wm_class):
+        try:
+            screen = window.qtile.current_screen
+            width = int(screen.width * 0.55)
+            height = int(screen.height * 0.45)
+            x = int(screen.x + (screen.width - width) / 2)
+            y = int(screen.y + 40)
+            window.floating = True
+            window.place(x, y, width, height, 2, None, above=True)
+        except Exception:
+            pass
+
+
 # Hook para adicionar PATH do pipx
 @hook.subscribe.startup
 def setup_environment():

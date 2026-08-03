@@ -39,6 +39,8 @@ floating_layout = layout.Floating(
         Match(wm_class="TelegramDesktop"),
         Match(wm_class="zenity"),
         Match(wm_class="galculator"),
+        Match(wm_class="QuickNotes"),
+        Match(wm_class="quick-notes"),
         Match(title="branchdialog"),
         Match(title="pinentry"),
     ],
