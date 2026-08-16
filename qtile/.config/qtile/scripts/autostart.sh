@@ -10,7 +10,7 @@ export SSH_AUTH_SOCK
 
 # 2. System Services and Background Daemons
 # Kill existing instances cleanly
-for cmd in picom light-locker nm-applet caffeine; do
+for cmd in picom nm-applet caffeine; do
     pkill -x "$cmd" 2>/dev/null || true
 done
 
@@ -19,8 +19,6 @@ sleep 1
 
 # Start system services
 pgrep -x picom > /dev/null || picom &
-pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x light-locker > /dev/null || light-locker --lock-after-screensaver=10 --lock-on-suspend &
 nitrogen --restore &
 
 # Start XDG desktop portal before StatusNotifier
@@ -38,6 +36,7 @@ pgrep -x caffeine > /dev/null || caffeine &
 # 3. Instant Settings (don't background)
 xset r rate 300 50
 xset s 600
+xset dpms 600 600 900
 
 # Wait for system services to be ready
 sleep 2

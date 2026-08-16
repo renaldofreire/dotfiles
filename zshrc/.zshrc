@@ -146,6 +146,9 @@ alias claude-nemotron='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_
 alias claude-gemini='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="claude-gemini-4free" claude'
 alias claude-gemini36='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="gemini-3-6flash" claude'
 
+# Bypass do TMUX
+alias opencode="env -u TMUX env -u TMUX_PANE opencode"
+
 # export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 # export ANTHROPIC_API_KEY="9router"
 

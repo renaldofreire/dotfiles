@@ -1,0 +1,15 @@
+#!/bin/sh
+SPAWN="flatpak-spawn --host"
+
+# Descobre a sessão do tmux ativa no sistema principal
+SESSION=$($SPAWN tmux list-clients -F "#{session_name}" 2>/dev/null | head -n 1)
+
+if [ -z "$SESSION" ]; then
+    SESSION=$($SPAWN tmux list-sessions -F "#{session_name}" 2>/dev/null | head -n 1)
+fi
+
+if [ -n "$SESSION" ]; then
+    $SPAWN tmux new-window -t "$SESSION" -w -n "Joplin" nvim "$1"
+else
+    $SPAWN alacritty -e nvim "$1"
+fi

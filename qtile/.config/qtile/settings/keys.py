@@ -92,4 +92,8 @@ keys = [
     Key([], "Print", lazy.spawn("ksnip -r"), desc="Launch ksnip"),
     Key(["shift"], "F11", lazy.spawn("alacritty -e redshift -O 4400"), desc="Redshift on"),
     Key(["shift"], "F12", lazy.spawn("alacritty -e redshift -x"), desc="Redshift off"),
+
+    # Power management (i3lock com cor do tema monochrome_slate)
+    Key([mod, "control"], "s", lazy.spawn("sh -c 'i3lock -c 0f111a && sleep 1 && systemctl suspend'"), desc="Lock screen and suspend"),
+    Key([mod, "control"], "l", lazy.spawn("i3lock -c 0f111a"), desc="Lock screen"),
 ]
