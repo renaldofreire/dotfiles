@@ -38,6 +38,7 @@ keys = [
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.spawn(os.path.expanduser("~/dotfiles/scripts/quick-notes.sh")), desc="Quick notes in Neovim"),
     Key([mod, "shift"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "n", lazy.window.toggle_floating().when(func=lambda w: w.floating), lazy.layout.normalize(), desc="Reset floating window to tiled size"),
     # System
     Key(
         [mod, "shift"],

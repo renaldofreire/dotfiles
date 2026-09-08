@@ -170,6 +170,7 @@ for_window [title="branchdialog|pinentry"] floating enable
 exec_always --no-startup-id ~/.config/alacritty/scripts/theme_switcher.sh &
 exec_always --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 exec_always --no-startup-id export SSH_AUTH_SOCK
+exec_always --no-startup-id pgrep -x lxpolkit > /dev/null || lxpolkit &
 exec_always --no-startup-id pkill -x picom; picom &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id pgrep -x xdg-desktop-portal-gtk > /dev/null || /usr/lib/xdg-desktop-portal-gtk &

@@ -19,7 +19,12 @@ layouts = [
         **BORDER_CONFIG,
         border_focus_stack=[colors["border_active"], colors["secondary"]],
     ),
-    layout.Max(**BORDER_CONFIG),
+    layout.Max(
+        border_focus=colors["border_active"],
+        border_normal=colors["border_inactive"],
+        border_width=0,
+        margin=0,
+    ),
     # Additional layouts (uncomment to enable)
     # layout.MonadTall(**BORDER_CONFIG),
     # layout.Spiral(**BORDER_CONFIG),
@@ -41,6 +46,7 @@ floating_layout = layout.Floating(
         Match(wm_class="galculator"),
         Match(wm_class="QuickNotes"),
         Match(wm_class="quick-notes"),
+        Match(wm_class="ksnip"),
         Match(title="branchdialog"),
         Match(title="pinentry"),
     ],

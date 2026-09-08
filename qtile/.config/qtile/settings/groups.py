@@ -15,7 +15,7 @@ MAIL_RE = re.compile(r"^(Mail|thunderbird)$")
 groups = [
     Group("1", matches=[Match(wm_class="Navigator"), Match(wm_class="zen")]),
     Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
-    Group("3", matches=[Match(wm_class="Joplin"), Match(wm_class="joplin")]),
+    Group("3", matches=[Match(wm_class="appimagekit-joplin"), Match(wm_class="Joplin")]),
     Group("4"),
     Group("5"),
     Group("6"),

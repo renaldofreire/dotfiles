@@ -1,26 +1,31 @@
 # ⌨️ Atalhos de Teclado - Qtile
 
-Esta é a lista atualizada de atalhos de teclado para a sua configuração do Qtile, agora integrada com o **Rofi** e seguindo os padrões universais de TWMs.
+Esta é a lista completa e atualizada de atalhos de teclado da sua configuração do Qtile.
 
-## 🚀 Lançadores e Janelas principais
+## 🚀 Lançadores e Janelas Principais
 
 | Atalho | Comando | Descrição |
 | :--- | :--- | :--- |
+| **`Super + Return`** | `alacritty -e tmux new-session` | Abrir terminal com sessão Tmux |
 | **`Super + d`** | `rofi -show drun` | Abrir lançador de aplicativos (**Rofi**) |
 | **`Super + p`** | `rofi -show run` | Abrir lançador de comandos (**Rofi**) |
 | **`Super + Tab`** | `rofi -show window` | Alternar entre janelas abertas (**Rofi**) |
-| **`Super + Return`** | `terminal` | Abrir o terminal padrão |
-| **`Super + q`** | `kill` | Fechar a janela em foco |
-| **`Super + r`** | `spawncmd` | Abrir prompt nativo do Qtile |
+| **`Super + n`** | `quick-notes.sh` | Abrir notas rápidas no Neovim |
+| **`Super + Ctrl + w`** | `zen-browser` | Abrir o navegador Zen Browser |
+| **`Super + Ctrl + f`** | `alacritty -e nnn` | Abrir gerenciador de arquivos `nnn` |
+| **`Print`** | `ksnip -r` | Captura de tela com Ksnip |
+| **`Super + q`** | `kill` | Fechar janela ativa |
+| **`Super + r`** | `spawncmd` | Prompt de comando nativo |
 
 ## 🧩 Gerenciamento de Janelas e Layouts
 
 | Atalho | Comando | Descrição |
 | :--- | :--- | :--- |
-| **`Super + Space`** | `next_layout` | Alternar entre os layouts disponíveis |
+| **`Super + Space`** | `next_layout` | Alternar entre os layouts (`Columns`, `Max`) |
 | **`Super + Shift + Space`** | `toggle_floating` | Alternar entre modo flutuante e tiling |
 | **`Super + f`** | `toggle_fullscreen` | Alternar modo tela cheia |
-| **`Super + n`** | `normalize` | Resetar o tamanho das janelas |
+| **`Super + Shift + n`** | `normalize` | Resetar proporções de janelas emparelhadas |
+| **`Super + Ctrl + n`** | `restore_floating` | Restaurar janela flutuante/redimensionada ao tamanho do layout |
 | **`Super + h`** | `focus_left` | Mover o foco para a esquerda |
 | **`Super + l`** | `focus_right` | Mover o foco para a direita |
 | **`Super + j`** | `focus_down` | Mover o foco para baixo |
@@ -31,18 +36,22 @@ Esta é a lista atualizada de atalhos de teclado para a sua configuração do Qt
 | Atalho | Ação | Descrição |
 | :--- | :--- | :--- |
 | **`Super + Shift + h/l/j/k`** | Mover Janela | Move a janela física para a direção correspondente |
-| **`Super + Ctrl + h/l`** | Grow Left/Right | Aumentar/diminuir janela horizontalmente |
-| **`Super + Ctrl + j/k`** | Grow Down/Up | Aumentar/diminuir janela verticalmente |
+| **`Super + Ctrl + h/l`** | Grow Left/Right | Expandir janela horizontalmente |
+| **`Super + Ctrl + j/k`** | Grow Down/Up | Expandir janela verticalmente |
 
-## ⚙️ Controle do Sistema
+## ⚙️ Controle do Sistema, Áudio e Energia
 
 | Atalho | Ação | Descrição |
 | :--- | :--- | :--- |
-| **`Super + Shift + r`** | Reload Config | Recarrega as configurações do Qtile |
+| **`Super + Shift + r`** | Reload Config | Recarrega a configuração do Qtile instantaneamente |
 | **`Super + Shift + q`** | Shutdown Qtile | Encerra a sessão do Qtile |
-| **`XF86AudioMute`** | Mute | Alterna o mudo do sistema |
-| **`XF86AudioLowerVolume`** | Vol - | Diminui o volume em 5% |
-| **`XF86AudioRaiseVolume`** | Vol + | Aumenta o volume em 5% |
+| **`Super + Ctrl + l`** | Lock Screen | Bloqueia a tela (`i3lock`) |
+| **`Super + Ctrl + s`** | Lock & Suspend | Bloqueia a tela e suspende o sistema |
+| **`XF86AudioMute`** | Mute | Alterna o som mudo do sistema |
+| **`XF86AudioLowerVolume`** | Vol - | Diminui volume em 5% |
+| **`XF86AudioRaiseVolume`** | Vol + | Aumenta volume em 5% |
+| **`Shift + F11`** | Redshift On | Ativa filtro de luz azul (4400K) |
+| **`Shift + F12`** | Redshift Off | Desativa filtro de luz azul |
 
 ---
-*Arquivo gerado automaticamente pela Gemini CLI em 03/03/2026.*
+*Para um detalhamento completo de arquitetura, grupos e temas, consulte [`docs/MANUAL.md`](MANUAL.md).*

@@ -18,6 +18,7 @@ done
 sleep 1
 
 # Start system services
+pgrep -x lxpolkit > /dev/null || lxpolkit &
 pgrep -x picom > /dev/null || picom &
 nitrogen --restore &
 
@@ -44,6 +45,6 @@ sleep 2
 # 4. User Applications (staggered startup)
 (sleep 3 && alacritty) &
 (sleep 4 && zen-browser) &
-(sleep 5 && net.cozic.joplin_desktop) &
+(sleep 5 && ~/.joplin/Joplin.AppImage) &
 (sleep 6 && strawberry) &
 (sleep 7 && dropbox start) &
