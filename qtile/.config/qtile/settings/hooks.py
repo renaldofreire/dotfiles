@@ -53,3 +53,15 @@ def setup_environment():
 
     if local_bin not in os.environ["PATH"]:
         os.environ["PATH"] = local_bin + os.pathsep + os.environ["PATH"]
+
+
+@hook.subscribe.screen_change
+def restart_bar_on_randr_change(qtile, ev):
+    """
+    Restart bars when monitor configuration changes (wake/sleep, plug/unplug).
+    Prevents bars from disappearing when monitor goes to sleep via DPMS.
+    """
+    try:
+        qtile.cmd_restart()
+    except Exception:
+        pass

@@ -30,14 +30,15 @@ sleep 1
 pgrep -x nm-applet > /dev/null || /usr/bin/nm-applet --sm-disable --indicator &
 
 # Other services
-pgrep -x caffeine > /dev/null || caffeine &
+pgrep -x caffeine > /dev/null || caffeine start -a &
+
 
 # easyeffects &
-
+ 
 # 3. Instant Settings (don't background)
 xset r rate 300 50
-xset s 600
-xset dpms 600 600 900
+xset s noblank
+# DPMS managed by caffeine-ng (dpms inhibitor). # Do not set aggressive timeouts here; caffeine will inhibit DPMS when active.
 
 # Wait for system services to be ready
 sleep 2

@@ -11,6 +11,15 @@ mod = "mod4"
 terminal = guess_terminal()
 rofi_command = "rofi -show {mode}"
 
+@lazy.function
+def unfloat_and_normalize(qtile):
+    """Se a janela atual for flutuante, desativa o modo flutuante e normaliza o layout."""
+    win = qtile.current_window
+    if win and win.floating:
+        win.toggle_floating()
+    qtile.current_layout.normalize()
+
+
 keys = [
     # Window Management
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -38,7 +47,7 @@ keys = [
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.spawn(os.path.expanduser("~/dotfiles/scripts/quick-notes.sh")), desc="Quick notes in Neovim"),
     Key([mod, "shift"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key([mod, "control"], "n", lazy.window.toggle_floating().when(func=lambda w: w.floating), lazy.layout.normalize(), desc="Reset floating window to tiled size"),
+    Key([mod, "control"], "n", unfloat_and_normalize, desc="Reset floating window to tiled size"),
     # System
     Key(
         [mod, "shift"],
@@ -58,17 +67,17 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # Audio - PipeWire/PulseAudio
-    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    # Audio - PipeWire/WirePlumber (wpctl limits to 100% by default)
+    Key([], "XF86AudioMute", lazy.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")),
     Key(
         [],
         "XF86AudioLowerVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+        lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
     ),
     Key(
         [],
         "XF86AudioRaiseVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
+        lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0"),
     ),
     # Launchers
     Key(
