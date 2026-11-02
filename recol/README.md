@@ -1,13 +1,15 @@
 # Recol Integration & Backup
 
-Este diretório contém o backup e a documentação da integração do **Recol** com Alacritty, Neovim, Tmux e Qtile.
+Este diretório contém o backup e a documentação da integração do **Recol** com o ambiente de terminal: **Alacritty**, **Neovim** e **Tmux**.
+
+O Qtile permanece isolado e intocado, gerenciando seus temas de forma independente conforme sua configuração original (`monochrome_slate`).
 
 ## Como funciona a integração
 
 1. **Binário e Wrapper (`~/.local/bin/recol`)**
    - O binário compilado reside em `~/.cargo/bin/recol`.
    - O comando `recol` no terminal executa o wrapper em `~/.local/bin/recol` (versionado em `dotfiles/bin/.local/bin/recol`).
-   - Após aplicar o tema, o wrapper orquestra a sincronização dos outros componentes.
+   - Após aplicar o tema, o wrapper orquestra a sincronização dos componentes de terminal (Alacritty, Neovim e Tmux).
 
 2. **Alacritty**
    - Arquivo: `~/.config/alacritty/alacritty.toml`.
@@ -24,11 +26,6 @@ Este diretório contém o backup e a documentação da integração do **Recol**
    - Arquivo: `~/.tmux.conf`.
    - O Tmux opera em modo neutro/transparente (`bg=default`), herdando a paleta ANSI diretamente do Alacritty.
    - O wrapper executa `tmux refresh-client -S` para forçar o redesenho da barra de status instantaneamente.
-
-5. **Qtile**
-   - Arquivo: `~/.config/qtile/settings/colors.py`.
-   - O wrapper extrai a paleta do Recol (`recol -j`) e gera `~/.config/qtile/recol_theme.json`.
-   - `colors.py` carrega dinamicamente esse arquivo (com fallback para `monochrome_slate`) e o wrapper chama `qtile cmd-obj -o cmd -f reload_config`.
 
 ## Como Usar
 
@@ -55,4 +52,3 @@ No Neovim:
 
 - `backup/recol-wrapper.sh`: Cópia do wrapper de sincronização.
 - `backup/recol.lua`: Cópia da integração Lua para Neovim.
-- `backup/recol_theme.json`: Snapshot de tema gerado para o Qtile.
