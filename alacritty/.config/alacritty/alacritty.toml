@@ -1,21 +1,54 @@
-[general]
-import = [
-  "current-theme.toml"
-]
-live_config_reload = true
+[colors.primary]
+background = "#24273a"
+foreground = "#cad3f5"
+dim_foreground = "#9ca3bd"
+bright_foreground = "#d2dcff"
 
-[env]
-TERM = "xterm-256color"
+[colors.cursor]
+text = "#24273a"
+cursor = "#f4dbd6"
 
-[window]
-decorations = "buttonless"
-dynamic_padding = false
-opacity = 1.0
-blur = false
+[colors.selection]
+text = "#24273a"
+background = "#f4dbd6"
 
-[window.padding]
-x = 12
-y = 0
+[colors.normal]
+black = "#494d64"
+red = "#ff9fae"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#9ec0ff"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#b8c0e0"
+
+[colors.bright]
+black = "#5b6078"
+red = "#f2a7b2"
+green = "#bde3b0"
+yellow = "#f4e3c1"
+blue = "#adc5f7"
+magenta = "#f493da"
+cyan = "#a5ded6"
+white = "#a5adcb"
+
+[colors.dim]
+black = "#3c3f52"
+red = "#d1828f"
+green = "#88b37a"
+yellow = "#c3ae82"
+blue = "#829dd1"
+magenta = "#c99bbd"
+cyan = "#72afa6"
+white = "#979db8"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#f8baa7"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#ddaec4"
 
 [font]
 size = 11.0
@@ -28,17 +61,26 @@ style = "Regular"
 family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-style = "Italic"
-
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
-[cursor]
-style = { shape = "Block", blinking = "On" }
-vi_mode_style = { shape = "Beam" }
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[cursor.vi_mode_style]
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[general]
+live_config_reload = true
 
 [scrolling]
 history = 10000
@@ -48,3 +90,13 @@ save_to_clipboard = true
 
 [terminal.shell]
 program = "/usr/bin/zsh"
+
+[window]
+blur = false
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 1.0
+
+[window.padding]
+x = 12
+y = 0

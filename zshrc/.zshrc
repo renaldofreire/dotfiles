@@ -4,7 +4,7 @@
 # --- CONFIGURAÇÕES GERAIS ---
 # Remove duplicatas do PATH e define caminhos essenciais
 typeset -U path
-path=("$HOME/.local/bin" "$HOME/bin" "/usr/local/bin" $path)
+path=("$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/bin" "/usr/local/bin" $path)
 export EDITOR="nvim"
 
 # Histórico robusto (compartilhado entre abas)

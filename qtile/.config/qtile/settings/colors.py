@@ -3,6 +3,9 @@ Color Schemes for Qtile
 Modular theme management
 """
 
+import os
+import json
+
 # Theme Selector: "raven_blue", "catppuccin_mocha", "everforest", "dracula", "nord", "monochrome_slate"
 CURRENT_THEME = "monochrome_slate"
 
@@ -118,8 +121,23 @@ themes = {
     "monochrome_slate": monochrome_slate,
 }
 
+RECOL_THEME_FILE = os.path.expanduser("~/.config/qtile/recol_theme.json")
+
+
+def load_current_theme() -> dict:
+    if os.path.isfile(RECOL_THEME_FILE):
+        try:
+            with open(RECOL_THEME_FILE, "r") as f:
+                theme_data = json.load(f)
+                if isinstance(theme_data, dict) and "background" in theme_data:
+                    return theme_data
+        except Exception:
+            pass
+    return themes.get(CURRENT_THEME, raven_blue)
+
+
 # Load the current theme, fallback to raven_blue
-colors = themes.get(CURRENT_THEME, raven_blue)
+colors = load_current_theme()
 
 
 def set_theme(name: str) -> dict:
@@ -128,6 +146,11 @@ def set_theme(name: str) -> dict:
     if name in themes:
         CURRENT_THEME = name
         colors = themes[name]
+        if os.path.isfile(RECOL_THEME_FILE):
+            try:
+                os.remove(RECOL_THEME_FILE)
+            except OSError:
+                pass
     return colors
 
 
