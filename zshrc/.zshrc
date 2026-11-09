@@ -97,7 +97,7 @@ alias yt-dlp-video-max='yt-dlp -f "bestvideo+bestaudio/best"'
 alias yt-dlp-subs-pt-en='yt-dlp --skip-download --write-subs --write-auto-subs --sub-langs en,pt --sub-format ttml --convert-subs srt --output "transcript.%(ext)s"'
 
 # Manutenção (Arch Linux)
-alias ua-drop-caches='sudo paccache -rk3; paru -Sc --aur --noconfirm'
+alias ua-drop-caches='sudo paccache -rk3; chmod -R u+w ~/.cache/paru 2>/dev/null; paru -Sc --aur --noconfirm'
 alias ua-update-all='export TMPFILE="$(mktemp)"; \
     sudo true; \
     rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
