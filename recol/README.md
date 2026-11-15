@@ -1,6 +1,6 @@
 # Recol Integration & Backup
 
-Este diretório contém o backup e a documentação da integração do **Recol** com o ambiente de terminal: **Alacritty**, **Neovim** e **Tmux**.
+Este diretório contém o backup e a documentação da integração do **Recol** com o ambiente de terminal: **Alacritty**, **Neovim**, **Tmux** e **bat**.
 
 O Qtile permanece isolado e intocado, gerenciando seus temas de forma independente conforme sua configuração original (`monochrome_slate`).
 
@@ -9,7 +9,7 @@ O Qtile permanece isolado e intocado, gerenciando seus temas de forma independen
 1. **Binário e Wrapper (`~/.local/bin/recol`)**
    - O binário compilado reside em `~/.cargo/bin/recol`.
    - O comando `recol` no terminal executa o wrapper em `~/.local/bin/recol` (versionado em `dotfiles/bin/.local/bin/recol`).
-   - Após aplicar o tema, o wrapper orquestra a sincronização dos componentes de terminal (Alacritty, Neovim e Tmux).
+   - Após aplicar o tema, o wrapper orquestra a sincronização dos componentes de terminal (Alacritty, Neovim, Tmux e bat).
 
 2. **Alacritty**
    - Arquivo: `~/.config/alacritty/alacritty.toml`.
@@ -27,6 +27,11 @@ O Qtile permanece isolado e intocado, gerenciando seus temas de forma independen
    - O Tmux opera em modo neutro/transparente (`bg=default`), herdando a paleta ANSI diretamente do Alacritty.
    - O wrapper executa `tmux refresh-client -S` para forçar o redesenho da barra de status instantaneamente.
 
+5. **bat**
+   - Arquivo: `~/.config/bat/config`.
+   - O wrapper atualiza dinamicamente o tema do `bat` baseado na claridade do tema (`is_light`).
+   - Temas claros recebem temas compatíveis (`gruvbox-light`, `Catppuccin Latte`, etc.) e temas escuros recebem temas escuros (`gruvbox-dark`, `Dracula`, `Nord`, etc.), garantindo contraste e legibilidade ideais.
+
 ## Como Usar
 
 ```bash
@@ -37,6 +42,7 @@ recol -i
 recol nord
 recol dracula
 recol catppuccin
+recol "Gruvbox Light"
 
 # Filtrar e sortear temas escuros
 recol -rd -c Gruvbox

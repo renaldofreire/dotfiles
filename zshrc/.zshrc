@@ -21,16 +21,10 @@ fpath=(/usr/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit
 
-# --- SINCRONIZAÇÃO DE TEMAS UNIFICADA ---
-alias day1='$HOME/.config/alacritty/scripts/theme_switcher.sh day1'
-alias night1='$HOME/.config/alacritty/scripts/theme_switcher.sh night1'
-alias day2='$HOME/.config/alacritty/scripts/theme_switcher.sh day2'
-alias night2='$HOME/.config/alacritty/scripts/theme_switcher.sh night2'
-
-# Sincroniza o tema dinâmico ao abrir o terminal
-if [ -f "$HOME/.config/alacritty/scripts/theme_switcher.sh" ]; then
-    "$HOME/.config/alacritty/scripts/theme_switcher.sh" > /dev/null
-fi
+# --- GERENCIAMENTO DE TEMAS (recol) ---
+alias rc='recol'
+alias rcl='recol -L'
+alias rcc='recol -j'
 
 # --- ALIASES E FUNÇÕES PERSONALIZADOS ---
 # Geral
