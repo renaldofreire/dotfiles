@@ -56,12 +56,14 @@ def setup_environment():
 
 
 @hook.subscribe.screen_change
-def restart_bar_on_randr_change(qtile, ev):
+def restart_bar_on_randr_change(*args, **kwargs):
     """
     Restart bars when monitor configuration changes (wake/sleep, plug/unplug).
     Prevents bars from disappearing when monitor goes to sleep via DPMS.
     """
     try:
-        qtile.cmd_restart()
+        qtile = args[0] if args else kwargs.get("qtile")
+        if qtile:
+            qtile.cmd_restart()
     except Exception:
         pass
