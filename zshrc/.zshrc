@@ -5,6 +5,9 @@ typeset -U path
 path=("$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/bin" "/usr/local/bin" $path)
 export EDITOR="nvim"
 
+# 9router
+[ -f ~/.config/secrets.env ] && source ~/.config/secrets.env
+
 # Load generic profile if present
 [ -f ~/.profile ] && source ~/.profile
 
@@ -112,12 +115,6 @@ alias breath='zenta now --quick'
 alias breathe='zenta now'
 alias anchor='zenta anchor'
 alias reflect='zenta reflect'
-
-# AI & LLM integration
-alias claude-nemotron='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="nvidia-nemotro-3" claude'
-alias claude-gemini='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="claude-gemini-4free" claude'
-alias claude-gemini36='ANTHROPIC_BASE_URL="http://localhost:20128/v1" ANTHROPIC_API_KEY="sk-9router-local" ANTHROPIC_MODEL="gemini-3-6flash" claude'
-alias opencode="env -u TMUX env -u TMUX_PANE opencode"
 
 # ==============================================================================
 # TMUX AUTOSTART
