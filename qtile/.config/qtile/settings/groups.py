@@ -11,13 +11,14 @@ from .keys import mod, keys
 TELEGRAM_RE = re.compile(r"^(signal|Telegram|TelegramDesktop|discord|[fF]erdium)$", re.IGNORECASE)
 MEDIA_RE = re.compile(r"^(pocket-casts-linux|strawberry|org\.strawberrymusicplayer\.strawberry|easyeffects)$")
 MAIL_RE = re.compile(r"^(Mail|thunderbird)$")
+GAMES_RE = re.compile(r"^(net\.retrodeck\.retrodeck|retrodeck|es-de|retroarch|pcsx2|dolphin-emu|duckstation.*|rpcs3|cemu|ryujinx|steam)$", re.IGNORECASE)
 
 groups = [
     Group("1", matches=[Match(wm_class="Navigator"), Match(wm_class="zen")]),
     Group("2", matches=[Match(wm_class="Alacritty"), Match(wm_class="vscodium")]),
     Group("3", matches=[Match(wm_class="appimagekit-joplin"), Match(wm_class="Joplin")]),
     Group("4"),
-    Group("5"),
+    Group("5", matches=[Match(wm_class=GAMES_RE)]),
     Group("6"),
     Group("7", matches=[Match(wm_class=TELEGRAM_RE)]),
     Group("8"),

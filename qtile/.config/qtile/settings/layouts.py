@@ -2,6 +2,7 @@
 Layouts Configuration
 """
 
+import re
 from libqtile import layout
 from libqtile.config import Match
 from .colors import colors
@@ -47,6 +48,8 @@ floating_layout = layout.Floating(
         Match(wm_class="QuickNotes"),
         Match(wm_class="quick-notes"),
         Match(wm_class="ksnip"),
+        Match(title=re.compile(r".*RetroDECK.*Configurator.*", re.IGNORECASE)),
+        Match(title=re.compile(r"^(Friends List|Steam - News|Steam Settings)", re.IGNORECASE)),
         Match(title="branchdialog"),
         Match(title="pinentry"),
     ],
